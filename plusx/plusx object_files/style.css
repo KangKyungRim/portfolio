@@ -1,0 +1,69 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+/* reset */
+
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+body{font-family:'Noto Sans KR', sans-serif; sans-serif; font-size: 16px;}
+.wrap{width: 100%;}
+a{display: block; width: 100%; height: 100%;}
+
+/* visual */
+section.visual{width: 100%; overflow: hidden; background: url(../img/img_banner2.jpg) no-repeat center top; height: 1089px; }
+section.visual .logoBox{padding: 30px 0 0 40px; box-sizing: border-box; width: 15%; height: 10%; margin-bottom: 400px;}
+section.visual h1{display: inline; float: left; margin-right: 90px; width: 5%;}
+section.visual h2{padding: 9px 0; font-size: 13px; float: right;}
+section.visual ul.next{font-size: 60px; color: #fff; overflow: hidden; margin-bottom: 300px;}
+section.visual ul.next li{float: left;}
+section.visual ul.next li:nth-child(2){float: right;}
+section.visual .textBox{width: 100%; padding-left: 40px; box-sizing: border-box;}
+section.visual .textBox h3{font-size: 50px; color: #fff; line-height: 1.3; margin-bottom: 3px;}
+section.visual .textBox p{font-size: 14px; color: #fff; opacity: 66%; padding-left: 5px; box-sizing: border-box;}
+
+/* object */
+section.object{width: 100%; overflow: hidden;}
+section.object .benner{width: 100%; border: 1px solid #000; padding: 5px 0 5px 2px; box-sizing: border-box;font-weight: 500;}
+section.object ul{width: 100%; overflow: hidden;}
+section.object ul li{width: 50%; height: 1189px; float: left;  }
+section.object ul li:nth-child(4), section.object ul li:nth-child(8){background: #000; color: #fff;}
+section.object ul li .gif{width: 100%; height: 100%;}
+section.object ul li .txtBox{width: 100%;padding: 710px 0 20px 40px; box-sizing: border-box;}
+section.object ul li .txtBox .name{font-size: 80px; font-weight: bold; margin-bottom: 30px; letter-spacing: -3px;}
+section.object ul li .txtBox .name span{border-bottom: 5px solid #000;}
+section.object ul li:nth-child(4) .txtBox .name span, section.object ul li:nth-child(8) .txtBox .name span{border-bottom: 5px solid #fff;}
+section.object ul li .txtBox .text{font-size: 15px; line-height: 1.8; margin-bottom: 100px;}
+section.object ul li .txtBox .btn{font-size: 15px; font-weight: bold;}
+section.object ul li .txtBox .btn img{width: 15px; padding-bottom: 4px;}
+
+/* soldout */
+section.soldout{width: 100%; overflow: hidden;}
+section.soldout .top{width: 100%; border: 1px solid #000; overflow: hidden; height: 650px;}
+section.soldout .top .left{width: 75%; float: left;height: 100%; border-right: 1px solid #000;
+padding-left: 40px; box-sizing: border-box; position: relative; }
+section.soldout .top .left:hover{position: absolute; background: url(../img/상세\ 썸네일.jpg); width: 100%;height: 100%; overflow: hidden;}
+section.soldout .top .left p.img{margin-bottom: 120px; transform: translate(45%, 10%); position: relative;}
+section.soldout .top .left p.img:after{position: absolute; content: url(../img/soldout-1.png); width: 30%; height: 30px;
+left: 2%; top: 50%;}
+section.soldout .top .left p.img img{width: 30%; opacity: 30%;}
+section.soldout .top .left p.txt{color: #ccc; font-size: 17px; font-weight: bold;}
+section.soldout .top .right{width: 25%; height: 100%; float: right;}
+section.soldout .top .right{padding: 30px 0 0 40px; box-sizing: border-box;}
+section.soldout .top .right p.img{margin-bottom: 100px;}
+section.soldout .top .right p.img img{width: 90%;}
+section.soldout .top .right p.txt{font-size: 17px; font-weight: bold;}
+
+
+
+
+
+

@@ -1,0 +1,449 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nanum+Gothic&display=swap');
+
+/* reset */
+
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+body {font-family: 'Nanum Gothic', sans-serif; font-size: 16px; color: #1d1d1d; overflow-x: hidden;}
+.en{font-family: 'DM Serif Display', serif; color: #1d1d1d;}
+.inner{width: 1632px;}
+
+header{width: 100%; position: fixed; z-index: 100;}
+.innerHeader{height: 150px; line-height: 150px; max-width: 1720px; margin: auto;}
+.innerHeader .logo{float: left;}
+.innerHeader .logo a{width: 100%; height: 100%;}
+.innerHeader .logo a img{width: 120px;}
+.innerHeader .logo a img:nth-child(2){opacity: 0;}
+.menuOpen{float: right;}
+button.open{background: none; border: none; cursor: pointer;}
+button.open img:nth-child(2){display: none;}
+
+/* fixheader */
+header.on .innerHeader .logo a img:nth-child(1){display: none;}
+header.on .innerHeader .logo a img:nth-child(2){opacity: 1; width: 120px;}
+header.on button.open img:nth-child(1){display: none;}
+header.on button.open img:nth-child(2){display: inline-block;}
+header.on2{display: none;}
+
+/* menuOpen */
+.menuOpen .menuWrap{width: 100%; height: 100%; position: fixed; top: 0; right: 0; z-index: 200; background: #000;}
+.menuOpen .menuWrap .box{ width: 899px; overflow: hidden; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-46%);}
+.menuOpen .menuWrap .box ul{color: #fff; float: left; width: 45%;text-align: right; line-height: 4;}
+.menuOpen .menuWrap .box ul li a{width: 100%; height: 100%; font-size: 50px; position: relative;}
+.menuOpen .menuWrap .box ul li a:before{position: absolute; width: 0%; height: 1px; content: ''; background: #fff; left: 0; bottom: 0;transition: all 0.3s;}
+.menuOpen .menuWrap .box ul li a:hover:before{width: 100%; transition: all 0.3s;}
+.menuOpen .menuWrap .box ul li:nth-child(1) a{margin-right: 60px; line-height: 0;}
+.menuOpen .menuWrap .box ul li:nth-child(2) a{margin-right: 130px;}
+.menuOpen .menuWrap .box ul li:nth-child(3) a{margin-right: 160px;}
+.menuOpen .menuWrap .box ul li:nth-child(4) a{margin-right: 0;}
+.menuOpen .menuWrap .box ul .sub{font-size: 25px; display: block; line-height: 0; margin-top: -45px; text-decoration: none; margin-left: -80px; width: 100%; height: 100%;}
+.menuOpen .menuWrap .box ul .sub:before{display: none;}
+.menuOpen .menuWrap .box p.img{ float: right; margin-top: 200px; margin-right: 60px;}
+.menuOpen .menuWrap .box p.img img{ width: 100%;}
+.menuOpen .menuWrap .close img{position: absolute; right: 5%; top: 5%;}
+
+/* .menuWrap 열기 */
+/*---  js파일: 햄버거 메뉴 ---*/
+.menuOpen .menuWrap {width: 0; transition: 0.5s; overflow: hidden; transform: skewY(40deg); opacity: 0; }
+.menuOpen .menuWrap.on {width: 100%; right: 0;  transform: skewY(0deg); transition: 0.5s; opacity: 1; }
+.menuOpen .menuWrap ul {display: none} /* 메뉴 열었을때 애니 진행위해서 없애줌 */
+.menuOpen .menuWrap.on ul {display: block;}
+
+
+/* section.visual */
+section.visual{background: #000; padding: 150px 0;}
+section.visual .inner{ margin: 0 auto; position: relative;}
+section.visual .inner .video{text-align: center; }
+section.visual .inner .video:after{position: absolute; content: ''; width: 502px; height: 892px; background: none; border: 1px solid #fff; top: -2%; left: 33.6%;}
+section.visual .inner .titBox{color: #fff; position: absolute; content: ''; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+section.visual .inner .titBox a{width: 100%; height: 100%; display: block;}
+section.visual .inner .titBox h2{font-size: 200px; font-weight: normal; font-style: italic; width: 930px;}
+section.visual .inner .titBox .hi{font-size: 30px; position: absolute; top: -20%; left: -5%; line-height: 1.2;}
+section.visual .inner .titBox .space{font-size: 40px; position: absolute; right: -10%;}
+section.visual .txt{color: #fff; font-size: 18px; transform: rotate(270deg) translateY(-50%); position: absolute; top: 50%; left: -5%; content: '';}
+section.visual .img2{position: absolute; right: -5%;  width: 100px; z-index: 1;}
+section.visual .img3{position: absolute; }
+section.visual .img4{position: absolute; right: -6%;  width: 120px; opacity: 15%; }
+section.visual img{width: 100%;}
+
+/* 애니메이션 */
+/* svg */
+.img1Box{display: block; transform: rotate(-10deg); opacity: 90%;}
+.img1Box .svgAni path {fill:none; stroke:#fff; stroke-width: 0.5px; stroke-dasharray: 3044; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.visual .img1Box {width: 370px ; position: absolute; right: -6%; top: 40%;}
+
+/* SVG 애니메이션 */
+.img1Box.motion .svgAni path {animation-name: dash; animation-duration: 2s;}
+@keyframes dash {
+    0%{stroke-dashoffset: 3044;}
+    100% {stroke-dashoffset: 0;}
+} 
+section.visual .img1Box.motion{animation: bfscroll1 linear 3s infinite;}
+@keyframes bfscroll1{
+    0%{bottom: 26%;}
+    50%{bottom: 27%;}
+    100%{bottom: 26%;}
+}
+
+
+section.visual .inner .video.motion{animation-name: opacityAni; animation-duration: 1s;} 
+@keyframes opacityAni{
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+}
+section.visual .inner .video.motion:after{animation-name: opacityAni; animation-duration: 1s;}
+
+
+section.visual .img3.motion{animation: bfscroll3 linear 3s infinite;}
+@keyframes bfscroll3{
+    0%{right: 4%; bottom: -2%;}
+    50%{right: 5%; bottom: -1%;}
+    100%{right: 4%; bottom: -2%;}
+}
+
+section.visual .img2.motion{animation: bfscroll2 linear 3s infinite;}
+@keyframes bfscroll2{
+    0%{bottom:16%;}
+    50%{bottom:17%;}
+    100%{bottom:16%;}
+}
+section.visual .img4.motion{animation: bfscroll4 linear 5s infinite;}
+@keyframes bfscroll4{
+    0%{bottom:17%;}
+    50%{bottom:16%;}
+    100%{bottom:17%;}
+}
+
+section.visual .txt{animation-name: opacityAni; animation-duration: 1s;}
+
+
+
+section.visual .inner .titBox.motion .hi.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(20ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+section.visual .inner .titBox.motion .space.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(20ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+
+section.visual .inner .titBox.motion h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(50ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+
+
+
+/* section.about */
+section.about{background: #000; padding: 200px 0 500px; overflow: hidden; }
+section.about .inner{margin: 0 auto;}
+section.about .inner .left{float: left; color: #fff; width: 50%; padding: 150px; box-sizing: border-box; position: relative;  z-index: 1;}
+section.about .inner .left h2{font-size: 48px; font-weight: normal; margin-bottom: 90px;}
+section.about .inner .left .txt{font-size: 18px; margin-left: 140px; margin-bottom: 221px;}
+section.about .inner .left .getinBtn{display: block; width: 100%; height: 100%; font-size: 22px; margin-left: 140px; font-weight: bold;  display: inline;}
+section.about .inner .left .getinBtn i{font-size: 25px; margin-left: 30px; background: #fff; color: #1d1d1d; width: 40px; height: 40px; border-radius: 50%; line-height: 40px; text-align: center; transition: all 0.3s;}
+section.about .inner .left .getinBtn:hover i{transform: translateX(20px); transition: all 0.5s;}
+section.about .inner .left p.img{position: absolute; content: ''; left:-44%; top: 13%; z-index: -1; }
+section.about .inner .left p.img img{width: 100%; opacity: 35%; }
+section.about .inner .right{float:right; width: 50%;}
+section.about .inner .right p.img{text-align: center; padding-top: 50px; position: relative; }
+section.about .inner .right p.img a{width: 100%; height: 100%; display: block;}
+section.about .inner .right p.img a img{transition: all 0.5s;}
+section.about .inner .right p.img a:after{ position: absolute; content: ''; width: 530px; height: 664px; background: none; border: 1px solid #fff; left: 19.5%; top: 9.5%; transition: all 0.3s;}
+section.about .inner .right p.img:hover a img{z-index: 1; transform: translate(-20px,-20px); transition: all 0.5s;}
+section.about .inner .right p.img:hover a:after{z-index: -1;}
+section.about .box{width: 1900px; position: relative; margin-top: 60%; }
+section.about .box div{position: absolute; width: 200%; display: block;  content: ''; left: 0; top: 0;}
+section.about .box div span{font-size: 200px; color: #fff; float: left; width: 50%;}
+
+
+/* svg */
+.bfBox{display: block; transform: rotate(38deg); z-index: -1; opacity: 90%;}
+.bfBox .svgAni path {fill:none; stroke:#fff; stroke-width: 0.5px; stroke-dasharray: 8627; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.about .bfBox {position: absolute; width: 750px; left: -26%; top: 35%;}
+
+/* SVG 애니메이션 */
+.bfBox.motion .svgAni path {animation-name: dash; animation-duration: 4.5s; animation-delay: 0.5s;}
+@keyframes dash {
+    100% {stroke-dashoffset: 0;}
+}  
+
+section.about .box{animation: marquee 7s linear infinite;}
+@keyframes marquee {
+    0%{left: 0;}
+    100% {left: -100%;}
+}
+
+
+section.about .inner .right.motion p.img {animation-name: aboutAni; animation-duration: 0.6s;}
+@keyframes aboutAni{
+    0%{opacity: 0; transform: translate(40px,40px);
+}
+}
+
+section.about .inner .left.motion .splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(60ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+section.about .inner .left.motion .txt{animation-name: opacityAni; animation-duration: 0.6s;}
+section.about .inner .left.motion .getinBtn{animation-name: opacityAni; animation-duration: 0.6s;}
+section.about .inner .left.motion p.img{animation-name: opacityAni; animation-duration: 0.6s;}
+
+
+
+
+/* section.gallery */
+section.gallery{padding: 250px 0; width: 100%; box-sizing: border-box; margin-bottom: 600px;}
+section.gallery .inner{margin: auto;}
+section.gallery .inner .titBox{display: inline-block;}
+section.gallery .inner .titBox .txt{font-size: 20px; margin-bottom: 10px;}
+section.gallery .inner .titBox h2{font-size: 88px; font-weight: normal; line-height: 1.2; margin-bottom: 200px;}
+section.gallery .inner .titBox .getinBtn{width: 100%; height: 100%; font-size: 22px; font-weight: bold;  display: inline;}
+section.gallery .inner .titBox .getinBtn i{font-size: 25px; margin-left: 30px; background: #1d1d1d; color: #fff; width: 40px; height: 40px; border-radius: 50%; line-height: 40px; text-align: center; transition: all 0.3s;}
+section.gallery .inner .titBox .getinBtn:hover i{transform: translateX(20px); transition: all 0.5s;}
+section.gallery .slideBox{width: 1400px; position: relative;}
+section.gallery .slideBox .slide{position: absolute; left: 45%; width: 100%; margin-top: -50px; overflow: hidden;}
+section.gallery .slideBox .slide li{ margin-right: 120px; position: relative; }
+section.gallery .slideBox .slide li a{width: 100%; height: 100%; display:block; }
+section.gallery .slideBox .slide li a p.img{ margin-bottom: 20px; width: 100%; overflow: hidden; }
+section.gallery .slideBox .slide li a p.img img{display: block; width: 100%; transition: all 0.5s;}
+section.gallery .slideBox .slide li a span{font-size: 12px; position: absolute; right: -14%; top: 7%; position: absolute; transform: rotate(270deg); }
+section.gallery .slideBox .slide li:nth-child(12)  a span{right: -17%; top: 8%;}
+section.gallery .slideBox .slide li a .txt{font-size: 16px; color: #333; margin-bottom: 5px;}
+section.gallery .slideBox .slide li a .tit{font-size: 25px; letter-spacing: -1.2px;}
+
+/* 애니메이션 */
+section.gallery .inner .titBox.motion .txt, section.gallery .inner .titBox.motion .getinBtn{animation-name: opacityAni; animation-duration: 0.5s;}
+section.gallery .inner .titBox.motion .splitting .char{ 
+    display: inline-block; animation: slide-up2 0.2s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(40ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+section.gallery .slideBox .arrowSlide{display: inline-block; font-size: 40px; position: absolute; left: 40%; margin-top: 150px; cursor: pointer;}
+
+/* 호버 */
+section.gallery .slideBox .slide li a:hover p.img img{transform: scale(1.1); transition: all 0.5s;}
+
+
+/* section.process */
+section.process{width: 100%; padding: 330px 0; position: relative;}
+section.process .inner{margin: auto;}
+section.process .inner .mainBox{ width: 1015px; height: 734px; margin: 0 auto;position: relative;}
+section.process .inner .mainBox a {display: block; width: 100%; height: 100%;}
+section.process .inner .mainBox h2{font-size: 172px; color: #1d1d1d; position: absolute; left: 4%; top: 50%; transform: translateY(-50%); font-weight: normal;  transition: all 0.3s;}
+section.process .inner .mainBox .img1{ position: absolute; top: 50%; transform: translateY(-50%); left: 28%;  transition: all 0.3s;}
+section.process .inner .mainBox .img2{position: absolute;  top: 50%; transform: translateY(-50%); left: 32%;  transition: all 0.3s;}
+section.process .inner .mainBox .img3{position: absolute;  top: 15%; left: 26%;  transition: all 0.3s;}
+section.process .inner .mainBox .img4{position: absolute;  top: 50%; transform: translateY(-50%); left: 30%; }
+section.process .inner .mainBox .img4 img{ transition: all 0.3s;}
+section.process .inner .mainBox .txt{font-size: 16px; letter-spacing: -0.7px; position: absolute; bottom: -2%; left: 50%; transform: translateX(-50%);  transition: all 0.3s;}
+section.process .inner .mainBox .txt a i{font-size: 17px; margin-left: 8px; color: #1d1d1d;}
+section.process .bfImg1{position: absolute; right: 14%;}
+section.process .bfImg1 img{width: 50%;}
+section.process .bfImg2{position: absolute;}
+section.process .bfImg2 img{width: 50%;}
+section.process .bfImg3{position: absolute; right: 4%;}
+section.process .bfImg3 img{width: 50%;}
+section.process .bfImg4{position: absolute;left: 14%;}
+section.process .bfImg4 img{width: 50%;}
+section.process .bfImg5{position: absolute; left: 21%;}
+section.process .bfImg5 img{width: 45%;}
+
+/* svg */
+.bgBox01{display: block; z-index: 1; opacity: 40%;}
+.bgBox01 .svgAni path {fill:none; stroke: #1d1d1d; stroke-width: 1px; stroke-dasharray: 8317; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.process .bgBox01 {position: absolute; left: 0; top: 0;width: 1100px; z-index: -1;}
+
+/* SVG 애니메이션 */
+.bgBox01.motion .svgAni path {animation-name: dash; animation-duration: 5s; animation-delay: 0.5s;}
+@keyframes dash {
+    0% {stroke-dashoffset:8317;}
+    100% {stroke-dashoffset: 0;}
+}  
+.bgBox01.motion {animation: scrollAni1 linear 3s infinite;}
+@keyframes scrollAni1{
+    0%{top: 6%;}
+    50%{top: 6.5%;}
+    100%{top: 6%;}
+}
+
+
+/* svg */
+.bgBox02{display: block; z-index: 1; opacity: 40%;}
+.bgBox02 .svgAni path {fill:none; stroke: #1d1d1d; stroke-width: 1px; stroke-dasharray: 8317; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.process .bgBox02 {position: absolute; left: 0%; top: 6% ;width: 1100px; z-index: -1;}
+
+/* SVG 애니메이션 */
+
+.bgBox02.motion {animation: scrollAni2 linear 3.5s infinite;}
+@keyframes scrollAni2{
+    0%{left: 0%;}
+    50%{left: -0.5%;}
+    100%{left: 0%;}
+}
+
+/* svg */
+.bgBox03{display: block; z-index: 1; opacity: 40%;}
+.bgBox03 .svgAni path {fill:none; stroke: #1d1d1d; stroke-width: 1px; stroke-dasharray: 8317; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.process .bgBox03 {position: absolute; right: 0; top: 1%;width: 1100px; z-index: -1;}
+
+/* SVG 애니메이션 */
+.bgBox03.motion .svgAni path {animation-name: dash; animation-duration: 5s; animation-delay: 0.5s;}
+@keyframes dash {
+    0% {stroke-dashoffset:8317;}
+    100% {stroke-dashoffset: 0;}
+}  
+.bgBox03.motion{animation: scrollAni3 linear 3.5s infinite;}
+@keyframes scrollAni3{
+    0%{right: 0;}
+    50%{right: 0.5%;}
+    100%{right: 0%;}
+}
+
+/* svg */
+.bgBox04{display: block; z-index: 1; opacity: 40%;}
+.bgBox04 .svgAni path {fill:none; stroke: #1d1d1d; stroke-width: 1px; stroke-dasharray: 8317; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.process .bgBox04 {position: absolute; right: 0; top: 1%;width: 1100px; z-index: -1;}
+
+/* SVG 애니메이션 */
+.bgBox04.motion{animation: scrollAni4 linear 3.5s infinite;}
+@keyframes scrollAni4{
+    0%{top: 1%;}
+    50%{top: 0.5%;}
+    100%{top: 1%;}
+}
+
+
+
+
+
+
+/* 애니메이션 */
+section.process.motion .inner .mainBox h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 1s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(80ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+}
+
+section.process.motion .inner .mainBox .img1 img{animation: processAni; animation-duration: 0.5s;}
+@keyframes processAni{
+    0%{opacity: 0; }
+    30%{opacity: 0; transform: scale(1.2);}
+}
+section.process.motion .inner .mainBox .img2 img{animation: processAni; animation-duration: 0.9s;}
+section.process.motion .inner .mainBox .img3 img{animation: processAni; animation-duration: 1.3s;}
+section.process.motion .inner .mainBox .img4 img{animation: processAni; animation-duration: 1.8s;}
+
+section.process.motion .inner .mainBox .txt{animation-name: opacityAni; animation-duration: 0.6s;}
+
+
+
+section.process.motion .bfImg1{animation: scroll1 linear 3.5s infinite;}
+@keyframes scroll1{
+    0%{top:35%;}
+    50%{top:34%;}
+    100%{top:35%;}
+}
+
+section.process.motion .bfImg2{animation: scroll2 linear 3s infinite;}
+@keyframes scroll2{
+    0%{top:24%; left: 9%;}
+    50%{top:23%; left: 9.5%;}
+    100%{top:24%; left: 9%;}
+}
+
+section.process.motion .bfImg3{animation: scroll3 linear 3.5s infinite;}
+@keyframes scroll3{
+    0%{top:50%;}
+    50%{top:51%;}
+    100%{top:50%;}
+}
+
+section.process.motion .bfImg4{animation: scroll4 linear 3s infinite;}
+@keyframes scroll4{
+    0%{top:70%;}
+    50%{top: 69%;}
+    100%{top:70%;}
+}
+
+section.process.motion .bfImg5{animation: scroll5 linear 3.5s infinite;}
+@keyframes scroll5{
+    0%{top:35%;}
+    50%{top: 34%;}
+    100%{top:35%;}
+}
+
+
+
+/* 호버 */
+section.process .inner .mainBox:hover .img1{transform: translateY(-60%); transition: all 0.3s; opacity: 90%;}
+section.process .inner .mainBox:hover .img2{left: 35%; transform: translateY(-54%);  transition: all 0.3s;  opacity: 90%;}
+section.process .inner .mainBox:hover .img3{left: 22%; transition: all 0.3s;  opacity: 90%;}
+section.process .inner .mainBox:hover .img4 img{transform: scale(1.05); transition: all 0.3s;}
+section.process .inner .mainBox:hover h2{opacity: 40%; transition: all 0.3s;}
+section.process .inner .mainBox:hover .txt{bottom: -3.5%;  transition: all 0.3s;}
+
+
+/* footer */
+footer{width: 100%; background: #000; color: #fff; padding: 50px 0;}
+footer .inner{margin: 0 auto; overflow: hidden;}
+footer .inner .top{ width: 100%; margin-bottom: 600px;}
+footer .inner .top .logo{display: inline-block; float: left; margin-right: 30%;}
+footer .inner .top .logo a{width: 120px; height: 100%; display: block;}
+footer .inner .top .logo a img{width: 100%; margin-top: 15px;}
+footer .inner .top .info{float: left;margin: 20px 150px 0 0;}
+footer .inner .top .info .tit{font-size: 18px; font-weight: bold; margin-bottom: 10px;}
+footer .inner .top .info .txt{font-size: 18px;}
+footer .inner .top .menu{float: right; text-align: right; color: #fff;}
+footer .inner .top .menu a{width: 100%; height: 100%; display: block; font-size: 35px; transition: all 0.3s;}
+footer .inner .copyRight{font-size: 13px; display: inline; width: 100%; color: #ccc;}
+
+/* 호버 */
+footer .inner .top .menu a:hover{transform: translateX(-15px); transition: all 0.3s;}
+
+::-webkit-scrollbar {width: 12px;} 
+::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
+::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}
+

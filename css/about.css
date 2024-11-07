@@ -1,0 +1,417 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nanum+Gothic&display=swap');
+
+
+/* reset */
+
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+body {font-family: 'Nanum Gothic', sans-serif; font-size: 16px; color: #1d1d1d; overflow-x: hidden;}
+.en{font-family: 'DM Serif Display', serif; color: #1d1d1d;}
+
+.inner{width: 1632px;}
+
+header{ width: 100%; position: fixed; z-index: 100;}
+.innerHeader{height: 150px; line-height: 150px; max-width: 1720px; margin: auto;}
+.innerHeader .logo{float: left; }
+.innerHeader .logo a{width: 100%; height: 100%;}
+.innerHeader .logo a img{width: 120px;}
+.innerHeader .logo a img:nth-child(2){opacity: 0;}
+.menuOpen{float: right;}
+button.open{background: none; border: none; cursor: pointer;}
+button.open img:nth-child(2){display: none;}
+
+/* fixheader */
+header.on .innerHeader .logo a img:nth-child(1){display: none;}
+header.on .innerHeader .logo a img:nth-child(2){opacity: 1; width: 120px;}
+header.on button.open img:nth-child(1){display: none;}
+header.on button.open img:nth-child(2){display: inline-block;}
+header.on2{display: none;}
+
+/* menuOpen */
+.menuOpen .menuWrap{width: 100%; height: 100%; position: fixed; top: 0; right: 0; z-index: 200; background: #000;}
+.menuOpen .menuWrap .box{ width: 899px; overflow: hidden; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-46%);}
+.menuOpen .menuWrap .box ul{color: #fff; float: left; width: 45%;text-align: right; line-height: 4;}
+.menuOpen .menuWrap .box ul li a{width: 100%; height: 100%; font-size: 50px; position: relative;}
+.menuOpen .menuWrap .box ul li a:before{position: absolute; width: 0%; height: 1px; content: ''; background: #fff; left: 0; bottom: 0;transition: all 0.3s;}
+.menuOpen .menuWrap .box ul li a:hover:before{width: 100%; transition: all 0.3s;}
+.menuOpen .menuWrap .box ul li:nth-child(1) a{margin-right: 60px; line-height: 0;}
+.menuOpen .menuWrap .box ul li:nth-child(2) a{margin-right: 130px;}
+.menuOpen .menuWrap .box ul li:nth-child(3) a{margin-right: 160px;}
+.menuOpen .menuWrap .box ul li:nth-child(4) a{margin-right: 0;}
+.menuOpen .menuWrap .box ul .sub{font-size: 25px; display: block; line-height: 0; margin-top: -45px; text-decoration: none; margin-left: -80px; width: 100%; height: 100%;}
+.menuOpen .menuWrap .box ul .sub:before{display: none;}
+.menuOpen .menuWrap .box p.img{ float: right; margin-top: 200px; margin-right: 60px;}
+.menuOpen .menuWrap .box p.img img{ width: 100%;}
+.menuOpen .menuWrap .close img{position: absolute; right: 5%; top: 5%;}
+
+/* .menuWrap 열기 */
+/*---  js파일: 햄버거 메뉴 ---*/
+.menuOpen .menuWrap {width: 0; transition: 0.5s; overflow: hidden; transform: skewY(40deg); opacity: 0; }
+.menuOpen .menuWrap.on {width: 100%; right: 0;  transform: skewY(0deg); transition: 0.5s; opacity: 1; }
+.menuOpen .menuWrap ul {display: none} /* 메뉴 열었을때 애니 진행위해서 없애줌 */
+.menuOpen .menuWrap.on ul {display: block;}
+
+/* section.visual */
+section.visual{background: #000; padding: 150px 0;}
+section.visual .inner{ margin: auto;  position: relative;}
+section.visual .inner .videoBox { text-align: center;}
+section.visual .inner .videoBox a{display: inline-block;}
+section.visual .inner .videoBox a .video{ margin: 0 auto; }
+section.visual .inner .videoBox a .video:after{position: absolute; content: ''; width: 470px; height: 892px; background: none; border: 1px solid #fff;left: 34.5%; top: -2%;}
+section.visual .inner .videoBox a h2{font-size: 200px; font-weight: normal; font-style: italic; color: #fff; position: absolute; left: 34%; top: 31%;}
+section.visual .inner .txt{color: #fff; position: absolute; right: -6.5%; top: 2%; transform: rotate(90deg);font-size: 16px;}
+section.visual .inner .num{color: #fff; font-size: 20px; position: absolute; left: -4%; top: 47%; transform: rotate(90deg); font-weight: bold;}
+section.visual .inner .img1{position: absolute;right: 3%; bottom: 55%;}
+section.visual .inner .img2{position: absolute; right: 4%; bottom: 42%;}
+section.visual .inner .txtBox{color: #fff; font-size: 14px; position: absolute; left: -4%; bottom: 0%;}
+
+/* 애니메이션 */
+section.visual .inner.motion .video{animation-name: opacityAni; animation-duration: 1s;} 
+@keyframes opacityAni{
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+}
+
+
+section.visual .inner.motion h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(50ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+
+section.visual .inner.motion .num{animation-name: opacityAni; animation-duration: 1s;}
+section.visual .inner.motion .txt{animation-name: opacityAni; animation-duration: 1s;}
+section.visual .inner.motion .txtBox{animation-name: opacityAni; animation-duration: 1s;}
+
+
+section.visual .inner.motion .img1{animation: scrollVisual linear 3s infinite;}
+@keyframes scrollVisual{
+    0%{bottom: 55%; right: 2%;}
+    50%{bottom: 54%; right: 3%;}
+    100%{ bottom: 55%; right: 2%;}
+}
+
+
+section.visual .inner.motion .img2{animation: scrollVisual2 linear 3s infinite;}
+@keyframes scrollVisual2{
+    0%{bottom: 42%; right: 3%;}
+    50%{bottom: 43%; right: 4%;}
+    100%{ bottom: 42%; right: 3%;}
+}
+
+
+
+/* section.aboutMe */
+section.aboutMe{ background: #000; padding: 300px 0; overflow: hidden;}
+section.aboutMe .inner{margin: auto;}
+section.aboutMe .inner .top{width: 100%; display: inline-block;}
+section.aboutMe .inner .top p.img{position: relative; left: 10px; top: 10px; float: left; margin-right: 150px;}
+section.aboutMe .inner .top p.img:after{position: absolute; width: 581px; height: 577px; content: ''; border: 1px solid #fff; left: -3%; top: -3%; background: none;}
+section.aboutMe .inner .top h2{color: #fff; font-weight: normal; font-size: 70px; line-height: 1;}
+section.aboutMe .inner .bottom{width: 36%; margin-top: 150px; display: inline-block; float: right;}
+section.aboutMe .inner .bottom .txt{color: #fff; font-size: 14px; line-height: 1.8; margin-bottom: 50px;}
+section.aboutMe .inner .bottom .box{background: #fff; width: 373px; height: 373px; position: relative; border-radius: 100%; margin-left: 20px;}
+section.aboutMe .inner .bottom .box:after{position: absolute; width: 373px; height: 373px; background: none; border: 1px solid #fff; border-radius: 100%;
+left: 5%; top: 1%; content: '';} 
+section.aboutMe .inner .bottom .box .txtBox{width: 100%; height: 100%; position: absolute; left: 18%; top: 33%;}
+section.aboutMe .inner .bottom .box .txtBox .info span{font-weight: bold; font-size: 18px; margin-right: 40px;}
+section.aboutMe .inner .bottom .box .txtBox .info:nth-child(3) span{margin-right: 24px;}
+section.aboutMe .inner .bottom .box .txtBox .info{font-size: 16px; margin-bottom: 15px;}
+
+/* 애니메이션 */
+section.aboutMe .inner.motion .top p.img{animation-name: opacityAni; animation-duration: 0.5s;}
+section.aboutMe .inner.motion .top p.img:after{animation-name: opacityAni2; animation-duration: 0.7s;}
+@keyframes opacityAni2{
+    0%{opacity: 0;}
+    30%{opacity: 0;}
+    60%{opacity: 0;}
+}
+
+section.aboutMe .inner.motion .top h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(40ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+section.aboutMe .inner.motion .bottom .txt{animation-name: opacityAni; animation-duration: 0.6s;}
+section.aboutMe .inner.motion .bottom .box{animation-name: opacityAni2; animation-duration: 0.7s;}
+
+/* section.timeLine */
+section.timeLine{padding-top: 300px; position: relative; }
+section.timeLine .inner{width: 100%; }
+section.timeLine .inner h2{font-size: 240px; font-style: italic; opacity: 21%; font-weight: normal;}
+section.timeLine .inner .txtBox1{position: absolute; left: 7%; bottom: -131%;}
+section.timeLine .inner .txtBox1:after{position: absolute; content: ''; width: 1px; height: 61px; background: #1d1d1d; left: 13%; top: -56%; opacity: 60%;}
+section.timeLine .inner .txtBox1:before{position: absolute; content: ''; width: 16px; height: 16px; background: #1d1d1d; border-radius: 100%;
+left: 11%; top: -70%;}
+section.timeLine .inner .txtBox2{position: absolute; left: 23%; bottom: -48%;}
+section.timeLine .inner .txtBox2:after{position: absolute; content: ''; width: 1px; height: 180px; background: #1d1d1d; left: 54%;bottom: -220%; opacity: 60%;}
+section.timeLine .inner .txtBox2:before{position: absolute; content: ''; width: 16px; height: 16px; background: #1d1d1d; border-radius: 100%; left: 50%;
+bottom: -225%;}
+section.timeLine .inner .txtBox3{position: absolute; left: 50%; bottom: -101%;}
+section.timeLine .inner .txtBox3:after{position: absolute; content: ''; width: 1px; height: 198px; background: #1d1d1d; left: 9%; top: -180%; opacity: 60%;}
+section.timeLine .inner .txtBox3:before{position: absolute; content: ''; width: 16px; height: 16px; background: #1d1d1d; border-radius: 100%; 
+left: 7%; top: -190%;}
+section.timeLine .inner .txtBox4{position: absolute; right: 15%; bottom: -1%;}
+section.timeLine .inner .txtBox4:after{position: absolute; content: '';  width: 1px; height: 74px; background: #1d1d1d; right: 13%; bottom: -72%; opacity: 60%;}
+section.timeLine .inner .txtBox4:before{position: absolute; content: '';  width: 16px; height: 16px; background: #1d1d1d; border-radius: 100%;
+right: 11%; bottom: -86%;}
+section.timeLine .inner .tit{font-weight: bold; font-size: 35px; margin-bottom: 20px;}
+section.timeLine .inner .txt{font-size: 18px; line-height: 1.5;}
+
+
+/* 애니메이션 */
+section.timeLine .inner.motion .txtBox1:before{animation-name: circleAni; animation-duration: 1.5s; animation-iteration-count: infinite; }
+@keyframes circleAni{
+    100%{opacity: 0; transform: scale(1.5);}
+}
+section.timeLine .inner.motion .txtBox2:before{animation-name: circleAni; animation-duration: 1.5s; animation-iteration-count: infinite;}
+section.timeLine .inner.motion .txtBox3:before{animation-name: circleAni; animation-duration: 1.5s; animation-iteration-count: infinite;}
+section.timeLine .inner.motion .txtBox4:before{animation-name: circleAni; animation-duration: 1.5s; animation-iteration-count: infinite;}
+
+section.timeLine .inner.motion .txtBox1:after{animation-name: heightAni; animation-duration: 1s;}
+@keyframes heightAni{
+    0%{height: 0;}
+}
+section.timeLine .inner.motion .txtBox2:after{animation-name: heightAni; animation-duration: 1s;}
+section.timeLine .inner.motion .txtBox3:after{animation-name: heightAni; animation-duration: 1s;}
+section.timeLine .inner.motion .txtBox4:after{animation-name: heightAni; animation-duration: 1s;}
+
+section.timeLine .inner.motion .tit, .txt{animation-name: opacityAni; animation-duration: 0.7s;}
+
+section.timeLine .inner.motion h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(50ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+/* svg */
+.timeLine1{display: block; z-index: -1; opacity: 70%;}
+.timeLine1 .svgAni path {fill:none; stroke:#1d1d1d; stroke-width: 0.5px; stroke-dasharray: 2428; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.timeLine .inner .timeLine1 {position: absolute; width: 2182px; left: -10%; top: 70%;}
+
+/* SVG 애니메이션 */
+.timeLine1.motion .svgAni path {animation-name: dash; animation-duration: 2s;}
+@keyframes dash {
+    0% {stroke-dashoffset: 2428;}
+    100% {stroke-dashoffset: 0;}
+}  
+.timeLine1.motion {animation: scroll1 linear 3s infinite;}
+@keyframes scroll1{
+    0%{top: 70%;}
+    50%{top: 71%;}
+    100%{top: 70%;}
+}
+
+/* svg */
+.timeLine2{display: block; z-index: -1; opacity: 70%;}
+.timeLine2 .svgAni path {fill:none; stroke:#1d1d1d; stroke-width: 0.5px; stroke-dasharray: 2465; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.timeLine .inner .timeLine2 {position: absolute; width: 2182px; left: -10%; top: 70%;}
+
+/* SVG 애니메이션 */
+.timeLine2.motion {animation: scroll2 linear 3s infinite;}
+@keyframes scroll2{
+    0%{top: 70%;}
+    50%{top: 69%;}
+    100%{top: 70%;}
+}
+
+
+/* section.ncs */
+section.ncs{padding: 60% 0 30% 0;}
+section.ncs .inner{ margin: 0 auto; position: relative; width: 1400px;}
+section.ncs .inner .box{ background: #191919; width: 592px; height: 1266px; padding: 230px 50px; box-sizing: border-box;}
+section.ncs .inner .box:after{position: absolute; content: ''; width: 592px; height: 1266px; border: 1px solid #000; left: -23px; top: 20px; z-index: -1;}
+section.ncs .inner .box:before{position: absolute; content: ''; width: 569px; height: 1246px;  border: 1px solid #fff; left: 0px; top: 20px;}
+section.ncs .inner h2{ font-size: 80px; color: #fff; font-weight: normal; line-height: 1; position: absolute; left: 50px; top: 200px;}
+section.ncs .inner h2 a{ width: 100%; height: 100%;}
+section.ncs .inner h2 a span{font-size: 35px; margin-left: 15px; display: inline-block;}
+section.ncs .inner .slideBox{ position: absolute; width: 1200px;  height: 526px; left: 0; top: 35%;}
+section.ncs .inner .slideBox:after{position: absolute; content: ''; background: #fff; width: 474px; height: 1px; left: 4%; top: -3%;}
+section.ncs .inner .slideBox:before{position: absolute; content: ''; background: #fff; width: 474px; height: 1px; left: 4%; bottom: -6%;}
+section.ncs .inner .slideBox .slide{position: relative; color: #fff; width: 1500px;}
+section.ncs .inner .slideBox .slide li{width: 100%;}
+section.ncs .inner .slideBox .slide li .img{width: 889px; height: 580px; position: absolute; left: 37%; margin-top: 20px; }
+section.ncs .inner .slideBox .slide li .img a{width: 100%; height: 100%;}
+section.ncs .inner .slideBox .slide li .img a img{width: 100%; filter: drop-shadow(20px 0px 10px #ccc); transition: all 0.3s;}
+section.ncs .inner .slideBox .slide li .txt{font-size: 20px; position: absolute; left: 7%; margin-top: 16%; width: 350px; text-align: center;}
+
+.arrowSlide{ position: absolute; color: #fff; font-size: 20px; left: 36%; top:93%; }
+.arrowSlide .slick-prev{position: relative; line-height: 45px; cursor: pointer;}
+.arrowSlide .slick-prev:after{position: absolute; width: 45px; height: 45px; content: ''; border: 1px solid #fff; border-radius: 100%; left: -18px; }
+.arrowSlide .slick-next{margin-left: 45px; position: relative; line-height: 45px; cursor: pointer;}
+.arrowSlide .slick-next:after{position: absolute; width: 45px; height: 45px; content: ''; border: 1px solid #fff; border-radius: 100%; left: -18px;}
+
+.custom_paging .slick-active{ display: inline; position: absolute; left: 4%; top: -3%; font-family: 'DM Serif Display', serif; font-size: 26px;}
+.custom_paging li{display: none;}
+
+/* hover */
+section.ncs .inner .slideBox .slide li .img a:hover img{filter: drop-shadow(20px 0px 15px #ccc); transition: all 0.1s;}
+
+/* 애니메이션 */
+section.ncs .inner.motion h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(50ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+section.ncs .inner.motion .box:after, section.ncs .inner .box:before{animation-name: opacityAni; animation-duration: 0.5s;}
+
+section.ncs .inner.motion h2:hover a span{animation-name: next; animation-duration: 0.8s; animation-iteration-count: infinite;}
+@keyframes next{
+    0%{transform: translateX(0%);}
+    50%{transform: translateX(30%);}
+}
+
+section.ncs .inner.motion .slideBox {animation-name: opacityAni; animation-duration: 0.5s;}
+
+
+/* section.skill */
+section.skill{padding: 10% 0 50% 0; position: relative;}
+section.skill .inner{width: 100%;}
+section.skill .inner .titBox{ text-align: center; margin: 150px 0 200px 0;}
+section.skill .inner .titBox h2{font-size: 80px; margin-bottom: 10px;}
+section.skill .inner .titBox p{font-size: 20px;}
+section.skill .inner .box{ width: 3700px;  position: relative;}
+section.skill .inner .skillSlide{width: 200%; position: absolute; display: block; }
+section.skill .inner .skillSlide span{float: left; width: 50%;} 
+section.skill .inner .skillSlide span p{float: left; margin-right: 400px;}
+section.skill .inner .skillSlide .ai{width: 130px; position: relative; margin-top: 20px;}
+section.skill .inner .skillSlide .ai:after{position: absolute; content: '90%'; font-size: 24px; color: #000; right: -20px; top: -33px;}
+section.skill .inner .skillSlide .xd{width: 140px; position: relative; margin-top: -20px;}
+section.skill .inner .skillSlide .xd:after{position: absolute; content: '95%'; font-size: 24px; color: #000; left: 0; bottom: -33px;}
+section.skill .inner .skillSlide .ps{width: 130px; position: relative; margin-top: 30px;}
+section.skill .inner .skillSlide .ps:after{position: absolute; content: '85%'; font-size: 24px; color: #000; left: 0; top: -33px;}
+section.skill .inner .skillSlide .css{width: 150px; position: relative; margin-top: -10px;}
+section.skill .inner .skillSlide .css:after{position: absolute; content: '80%';  font-size: 24px; color: #000; right: 0; bottom: -33px;}
+section.skill .inner .skillSlide .html{width: 140px; position: relative; margin-top: 10px;}
+section.skill .inner .skillSlide .html:after{position: absolute; content: '80%';  font-size: 24px; color: #000; right: 40px; top: -35px;}
+section.skill .inner .skillSlide .java{width: 120px; position: relative; margin-top: -15px;}
+section.skill .inner .skillSlide .java:after{position: absolute; content: '40%';  font-size: 24px; color: #000; right: 40px; bottom: -37px;}
+section.skill .inner .skillSlide .jqury{width: 90px; position: relative;}
+section.skill .inner .skillSlide .jqury:after{position: absolute;  content: '40%';  font-size: 24px; color: #000; top: -15px; right: -25px;}
+section.skill .inner .skillSlide span p img{width: 100%; filter: drop-shadow(10px 10px 10px #ccc);}
+
+
+/* 애니메이션 */
+section.skill .skillSlide{animation: marquee 20s linear infinite;}
+@keyframes marquee {
+    0%{left: 0;}
+    100% {left: -100%;}
+}
+
+/* svg */
+.lineBox1{display: block;  opacity: 100%;}
+.lineBox1 .svgAni path {fill:none; stroke:#1d1d1d; stroke-width: 0.5px; stroke-dasharray: 2030; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.skill .lineBox1 {position: absolute; width: 1920px; left: 0; top: 0;}
+
+/* SVG 애니메이션 */
+.lineBox1.motion .svgAni path {animation-name: dash; animation-duration: 1.2s;}
+@keyframes dash {
+    0% {stroke-dashoffset: 2030;}
+    100% {stroke-dashoffset: 0;}
+} 
+
+/* svg */
+.lineBox2{display: block;  opacity: 100%;}
+.lineBox2 .svgAni path {fill:none; stroke:#1d1d1d; stroke-width: 0.5px; stroke-dasharray: 2021; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.skill .lineBox2 {position: absolute; width: 1920px; left: 0; top: 0;}
+
+/* SVG 애니메이션 */
+.lineBox2.motion .svgAni path {animation-name: dash; animation-duration: 0.7s;}
+@keyframes dash {
+    0% {stroke-dashoffset: 2021;}
+    100% {stroke-dashoffset: 0;}
+} 
+
+/* svg */
+.lineBox3 {display: block;  opacity: 100%;}
+.lineBox3 .svgAni path {fill:none; stroke:#1d1d1d; stroke-width: 0.5px; stroke-dasharray: 2030; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.skill .lineBox3 {position: absolute; width: 1920px; left: 0; bottom: 24%;}
+
+/* SVG 애니메이션 */
+.lineBox3.motion .svgAni path {animation-name: dash; animation-duration: 1.2s;}
+@keyframes dash {
+    0% {stroke-dashoffset: 2030;}
+    100% {stroke-dashoffset: 0;}
+} 
+
+/* svg */
+.lineBox4{display: block;  opacity: 100%;}
+.lineBox4 .svgAni path {fill:none; stroke:#1d1d1d; stroke-width: 0.5px; stroke-dasharray: 2010; stroke-dashoffset: 0;}
+/* 각각 위치 잡아주기 */
+section.skill .lineBox4 {position: absolute; width: 1920px; left: 0; bottom: 24%;}
+
+/* SVG 애니메이션 */
+.lineBox4.motion .svgAni path {animation-name: dash; animation-duration: 0.7s;}
+@keyframes dash {
+    0% {stroke-dashoffset: 2010;}
+    100% {stroke-dashoffset: 0;}
+} 
+
+section.skill .inner .titBox.motion h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(50ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+section.skill .inner .titBox.motion p.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(20ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+/* footer */
+footer{width: 100%; background: #000; color: #fff; padding: 50px 0;}
+footer .inner{margin: 0 auto; overflow: hidden;}
+footer .inner .top{ width: 100%; margin-bottom: 600px;}
+footer .inner .top .logo{display: inline-block; float: left; margin-right: 30%;}
+footer .inner .top .logo a{width: 100%; height: 100%; display: block;}
+footer .inner .top .logo a img{width: 120px; margin-top: 15px;}
+footer .inner .top .info{float: left;margin: 20px 150px 0 0;}
+footer .inner .top .info .tit{font-size: 18px; font-weight: bold; margin-bottom: 10px;}
+footer .inner .top .info .txt{font-size: 18px;}
+footer .inner .top .menu{float: right; text-align: right; color: #fff;}
+footer .inner .top .menu a{width: 100%; height: 100%; display: block; font-size: 35px; transition: all 0.3s;}
+footer .inner .copyRight{font-size: 13px; display: inline; width: 100%; color: #ccc;}
+
+/* 호버 */
+footer .inner .top .menu a:hover{transform: translateX(-15px); transition: all 0.3s;}
+
+::-webkit-scrollbar {width: 12px;} 
+::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
+::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}

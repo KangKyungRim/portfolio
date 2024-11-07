@@ -1,0 +1,186 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nanum+Gothic&display=swap');
+
+
+/* reset */
+
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+body {font-family: 'Nanum Gothic', sans-serif; font-size: 16px; color: #1d1d1d; overflow-x: hidden;}
+.en{font-family: 'DM Serif Display', serif; color: #1d1d1d;}
+
+.inner{width: 1632px;}
+
+
+header{ width: 100%; position: fixed; z-index: 100;}
+.innerHeader{height: 150px; line-height: 150px; max-width: 1720px; margin: auto;}
+.innerHeader .logo{float: left; }
+.innerHeader .logo a{width: 100%; height: 100%;}
+.innerHeader .logo a img{width: 120px;}
+.innerHeader .logo a img:nth-child(2){opacity: 0;}
+.menuOpen{float: right;}
+button.open{background: none; border: none; cursor: pointer;}
+button.open img:nth-child(2){display: none;}
+
+/* fixheader */
+header.on .innerHeader .logo a img:nth-child(1){display: none;}
+header.on .innerHeader .logo a img:nth-child(2){opacity: 1; width: 120px;}
+header.on button.open img:nth-child(1){display: none;}
+header.on button.open img:nth-child(2){display: inline-block;}
+header.on2{display: none;}
+
+/* menuOpen */
+.menuOpen .menuWrap{width: 100%; height: 100%; position: fixed; top: 0; right: 0; z-index: 200; background: #000;}
+.menuOpen .menuWrap .box{ width: 899px; overflow: hidden; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-46%);}
+.menuOpen .menuWrap .box ul{color: #fff; float: left; width: 45%;text-align: right; line-height: 4;}
+.menuOpen .menuWrap .box ul li a{width: 100%; height: 100%; font-size: 50px; position: relative;}
+.menuOpen .menuWrap .box ul li a:before{position: absolute; width: 0%; height: 1px; content: ''; background: #fff; left: 0; bottom: 0;transition: all 0.3s;}
+.menuOpen .menuWrap .box ul li a:hover:before{width: 100%; transition: all 0.3s;}
+.menuOpen .menuWrap .box ul li:nth-child(1) a{margin-right: 60px; line-height: 0;}
+.menuOpen .menuWrap .box ul li:nth-child(2) a{margin-right: 130px;}
+.menuOpen .menuWrap .box ul li:nth-child(3) a{margin-right: 160px;}
+.menuOpen .menuWrap .box ul li:nth-child(4) a{margin-right: 0;}
+.menuOpen .menuWrap .box ul .sub{font-size: 25px; display: block; line-height: 0; margin-top: -45px; text-decoration: none; margin-left: -80px; width: 100%; height: 100%;}
+.menuOpen .menuWrap .box ul .sub:before{display: none;}
+.menuOpen .menuWrap .box p.img{ float: right; margin-top: 200px; margin-right: 60px;}
+.menuOpen .menuWrap .box p.img img{ width: 100%;}
+.menuOpen .menuWrap .close img{position: absolute; right: 5%; top: 5%;}
+
+/* .menuWrap 열기 */
+/*---  js파일: 햄버거 메뉴 ---*/
+.menuOpen .menuWrap {width: 0; transition: 0.5s; overflow: hidden; transform: skewY(40deg); opacity: 0; }
+.menuOpen .menuWrap.on {width: 100%; right: 0;  transform: skewY(0deg); transition: 0.5s; opacity: 1; }
+.menuOpen .menuWrap ul {display: none} /* 메뉴 열었을때 애니 진행위해서 없애줌 */
+.menuOpen .menuWrap.on ul {display: block;}
+/* section.visual */
+section.visual{background: #000; padding: 150px 0 70px 0;}
+section.visual .inner{ margin: auto;  position: relative;}
+section.visual .inner .videoBox { text-align: center;}
+section.visual .inner .videoBox a{display: inline-block;}
+section.visual .inner .videoBox a .video{margin: 0 auto;}
+section.visual .inner .videoBox a .video:after{position: absolute; content: ''; width: 502px; height: 892px; background: none; border: 1px solid #fff;left: 33.6%; top: -2%;}
+section.visual .inner .videoBox a h2{font-size: 200px; font-weight: normal; font-style: italic; color: #fff; position: absolute;  left: 30%; top: 31%;
+width: 650px; }
+section.visual .inner .txt{color: #fff; position: absolute; right: -5%; top: 1%; transform: rotate(90deg);font-size: 16px;}
+section.visual .inner .num{color: #fff; font-size: 20px; position: absolute; left: -4%; top: 47%; transform: rotate(90deg); font-weight: bold;}
+section.visual .inner .txtBox{color: #fff; font-size: 14px; position: absolute; left: -4%; bottom: 0%;}
+
+/* 애니메이션 */
+section.visual .inner.motion .video{animation-name: opacityAni; animation-duration: 1s;} 
+@keyframes opacityAni{
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+}
+
+section.visual .inner.motion .videoBox a h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.7s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(20ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+
+section.visual .inner.motion .num{animation-name: opacityAni; animation-duration: 1s;}
+section.visual .inner.motion .txt{animation-name: opacityAni; animation-duration: 1s;}
+section.visual .inner.motion .txtBox{animation-name: opacityAni; animation-duration: 1s;}
+
+
+/* section.contents */
+section.contents{padding: 400px 0 400px 0;}
+section.contents .inner{margin: auto; overflow: hidden;}
+section.contents .inner .txtBox{float: left; width: 50%; margin-top: 150px;}
+section.contents .inner .txtBox h2{font-weight: normal; font-size: 50px; font-style: italic; margin-bottom: 30px;}
+section.contents .inner .txtBox .txt{font-size: 18px; line-height: 1.7;}
+section.contents .inner .slideShow{ width: 50%; float: right; overflow: hidden; height: 540px; position: relative;}
+section.contents .inner .slideShow .slide{width: 100%; height: 100%;}
+section.contents .inner .slideShow .slide li{width: 100%; height: 100%; float: left;}
+section.contents .inner .slideShow .slide li img{width: 100%; height: 100%;}
+
+
+.slick-prev{position: absolute; left: 2%; top: 50%; transform: translateY(-50%); font-size: 30px; z-index: 1; cursor: pointer;}
+.slick-next{position: absolute; right: 2%; top: 50%; transform: translateY(-50%); font-size: 30px; z-index: 1; cursor: pointer;}
+
+/* 애니메이션 */
+section.contents .inner .txtBox.motion h2.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(20ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+
+
+/* section.cloneCoding */
+section.cloneCoding{padding: 400px 0; background: #000;}
+section.cloneCoding .inner{margin: auto; width: 1300px;}
+section.cloneCoding .inner h2{color: #fff; font-weight: normal; font-size: 150px; position: absolute; left: 54%; line-height: 1.2;}
+section.cloneCoding .inner ul{width: 100%;}
+section.cloneCoding .inner ul li:nth-child(odd){float: left; margin-bottom: 1200px;}
+section.cloneCoding .inner ul li:nth-child(even){float: right; margin-bottom: 1200px;}
+section.cloneCoding .inner ul li:nth-child(2){margin-top: 1000px;}
+section.cloneCoding .inner ul li:last-child{margin-bottom: 600px;}
+section.cloneCoding .inner ul li a{width: 100%; height: 100%; display: block; }
+section.cloneCoding .inner ul li a p.img{width: 581px; height: 777px; position: relative; }
+section.cloneCoding .inner ul li a p.img:after{position: absolute; width: 100%; height: 100%; background: #fff; left: 0; top: 0; content: ''; opacity: 0; transition: all 0.4s;}
+section.cloneCoding .inner ul li a p.img:before{position: absolute; content: 'Go to see it.'; font-size: 30px; z-index: 1; left: 50%; top: 50%; transform: translate(-50%,-50%); color: #1d1d1d; font-weight: bold; text-align: center;  opacity: 0; }
+section.cloneCoding .inner ul li a p.img img{width: 100%; height: 100%;}
+section.cloneCoding .inner ul li a .txt{color: #fff; font-size: 15px;  margin-top: 10px;}
+section.cloneCoding .inner ul li:nth-child(even) a .txt{float: right;}
+
+/* 호버 */
+section.cloneCoding .inner ul li a:hover p.img:after{opacity: 90%;}
+section.cloneCoding .inner ul li a:hover p.img:before{opacity: 90%; transition: all 0.3s;}
+
+/* 애니메이션 */
+section.cloneCoding .inner h2.motion.splitting .char{ 
+    display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(30ms * var(--char-index));
+}
+@keyframes slide-up2{
+    0%{transform: translateY(30px); opacity: 0;}
+    30%{transform: translateY(30px); opacity: 0;}
+}
+
+section.cloneCoding .inner ul li.motion a {animation-name: slideUp; animation-duration: 0.4s;}
+@keyframes slideUp{
+    0%{opacity: 0; }
+    30%{opacity: 0; transform: translateY(20px);}
+}
+
+
+
+/* footer */
+footer{width: 100%; background: #000; color: #fff; padding: 50px 0; }
+footer .inner{margin:0 auto; padding-top: 50px; overflow: hidden; border-top: 1px solid grey;}
+footer .inner .top{ width: 100%; margin-bottom: 600px;}
+footer .inner .top .logo{display: inline-block; float: left; margin-right: 30%;}
+footer .inner .top .logo a{width: 120px; height: 100%; display: block;}
+footer .inner .top .logo a img{width: 100%; margin-top: 15px;}
+footer .inner .top .info{float: left;margin: 20px 150px 0 0;}
+footer .inner .top .info .tit{font-size: 18px; font-weight: bold; margin-bottom: 10px;}
+footer .inner .top .info .txt{font-size: 18px;}
+footer .inner .top .menu{float: right; text-align: right; color: #fff;}
+footer .inner .top .menu a{width: 100%; height: 100%; display: block; font-size: 35px; transition: all 0.3s;}
+footer .inner .copyRight{font-size: 13px; display: inline; width: 100%; color: #ccc;}
+
+/* 호버 */
+footer .inner .top .menu a:hover{transform: translateX(-15px); transition: all 0.3s;}
+
+
+
+::-webkit-scrollbar {width: 12px;} 
+::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
+::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}

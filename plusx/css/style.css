@@ -1,0 +1,142 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+/* reset */
+
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+body{font-family:'Noto Sans KR', sans-serif; sans-serif; font-size: 16px;}
+.wrap{width: 100%;}
+a{display: block; width: 100%; height: 100%;}
+
+/* visual */
+section.visual{width: 100%; overflow: hidden; background: url(../img/img_banner2.jpg) no-repeat center top; height: 1089px; }
+section.visual .logoBox{ width: 12%; height: 5%; margin: 40px 0 0 40px; margin-bottom: 400px;}
+section.visual h1{display: inline; float: left;}
+section.visual h2{ font-size: 13px; float: right; padding-top: 3px;}
+section.visual ul.next{font-size: 60px; color: #fff; overflow: hidden; margin-bottom: 300px; }
+section.visual ul.next li{float: left;}
+section.visual ul.next li:nth-child(2){float: right;}
+section.visual .textBox{width: 100%; padding-left: 40px; box-sizing: border-box;}
+section.visual .textBox h3{font-size: 50px; color: #fff; line-height: 1.3; margin-bottom: 3px;}
+section.visual .textBox p{font-size: 14px; color: #fff; opacity: 66%; padding-left: 5px; box-sizing: border-box;}
+
+/* object */
+section.object{width: 100%; overflow: hidden;}
+section.object .benner{width: 100%; border: 1px solid #000; padding: 5px 0 5px 2px; box-sizing: border-box;font-weight: 500;}
+section.object ul{width: 100%; overflow: hidden;}
+section.object ul li{width: 50%; height: 1070px; float: left; position: relative;}
+section.object ul li:nth-child(4), section.object ul li:nth-child(8){background: #000; color: #fff;}
+section.object ul li .img .gif{width: 100%; height: 100%;}
+section.object ul li .gif{width: 100%; height: 100%;}
+section.object ul li .txtBox{width: 100%; height: 100%; position: absolute; left: 10%; top: 50%;}
+section.object ul li .txtBox .name{font-size: 80px; font-weight: bold; margin-bottom: 30px; letter-spacing: -3px;}
+section.object ul li .txtBox .name span{border-bottom: 5px solid #000;}
+section.object ul li:nth-child(4) .txtBox .name span, section.object ul li:nth-child(8) .txtBox .name span{border-bottom: 5px solid #fff;}
+section.object ul li .txtBox .text{font-size: 15px; line-height: 1.8; margin-bottom: 100px;}
+section.object ul li .txtBox .btn{font-size: 15px; font-weight: bold;}
+section.object ul li .txtBox .btn img{width: 15px; padding-bottom: 4px;}
+
+/* soldout */
+section.soldout{width: 100%; overflow: hidden;}
+section.soldout .top{width: 100%; border: 1px solid #000; overflow: hidden; height: 650px;}
+section.soldout .top .left{width: 75%; float: left;height: 100%; border-right: 1px solid #000;
+box-sizing: border-box; position: relative;}
+section.soldout .top .left:after{position: absolute; content: url(../img/soldout-1.png); width: 30%; height: 30px;
+    left: 47%; top: 47%;}
+section.soldout .top .left a{display: block; width: 100%; height: 100%; }
+section.soldout .top .left a:hover{animation-name: left_ani; animation-duration: 1.8s; content: url(../img/상세\ 썸네일.jpg);filter: opacity(30%) }
+@keyframes left_ani{
+    0%{opacity: 0; filter: opacity(30%);}
+    30%{opacity: 1; filter: opacity(30%);}
+    100%{opacity: 1; filter: opacity(30%);}
+}
+
+section.soldout .top .left a p.img{margin-bottom: 120px; transform: translate(45%, 10%);}
+section.soldout .top .left a p.img img{width: 30%; filter: opacity(30%);}
+section.soldout .top .left a p.txt{color: #bbb; font-size: 17px; font-weight: bold; margin-left: 40px;}
+/* right */
+section.soldout .top .right{width: 25%; height: 100%; float: right; }
+section.soldout .top .right a{display: block; width:100%; height: 100%; }
+section.soldout .top .right a:hover{animation-name: right_ani; animation-duration: 1.8s; content: url(../img/1000000001_magnify_173.jpg);}
+@keyframes right_ani{
+    0%{opacity: 0;}
+    30%{opacity: 1;}
+    100%{opacity: 1;}
+}
+section.soldout .top .right a p.img{margin-bottom: 100px;}
+section.soldout .top .right a p.img img{width: 90%; transform: translateX(10%);}
+section.soldout .top .right a p.txt{font-size: 17px; font-weight: bold; margin-left: 40px;}
+
+/* ul.object_4 */
+section.soldout ul.object_4{width: 100%;overflow: hidden; border-bottom: 1px solid #000; }
+section.soldout ul.object_4 li{float: left; width: 24.96%; height: 650px; position: relative;  border-right: 1px solid #000;}
+section.soldout ul.object_4 li:after{position: absolute; content: url(../img/soldout-1.png); left: 42%; top: 38%;}
+section.soldout ul.object_4 li:nth-child(4){border-right: 0;}
+section.soldout ul.object_4 li a{display: block; width: 100%; height: 100%;}
+section.soldout ul.object_4 li a:hover{animation-name: li_ani; animation-duration: 1.8s; content: url(../img/1000000002_magnify_186.jpg);filter: opacity(30%);}
+section.soldout ul.object_4 li:nth-child(2) a:hover{content: url(../img/1000000003_magnify_124.jpg);}
+section.soldout ul.object_4 li:nth-child(3) a:hover{content: url(../img/1000000004_magnify_167.jpg);}
+section.soldout ul.object_4 li:nth-child(4) a:hover{content: url(../img/1000000005_magnify_111.jpg);}
+@keyframes li_ani{
+    0%{opacity: 0; filter: opacity(30%);}
+    30%{opacity: 1; filter: opacity(30%);}
+    100%{opacity: 1; filter: opacity(30%);}
+}
+section.soldout ul.object_4 li a img{width: 80%; transform: translate(12%, 7%); margin-bottom: 150px; filter: opacity(30%);}
+section.soldout ul.object_4 li a p{margin-left: 40px; font-size: 17px; color: #bbb; font-weight: bold;}
+/* ul.object_2 */
+section.soldout ul.object_2{width: 100%; overflow: hidden;}
+section.soldout ul.object_2 li{float: left; width: 49.95%; height: 600px; position: relative;}
+section.soldout ul.object_2 li:after{position: absolute; content: url(../img/soldout-1.png); left: 47%; top: 44%;}
+section.soldout ul.object_2 li:nth-child(1){border-right: 1px solid #000;}
+section.soldout ul.object_2 li a{display: block; width: 100%; height: 100%;}
+section.soldout ul.object_2 li a:hover{animation-name: li_ani; animation-duration: 1.8s; filter: opacity(30%); content: url(../img/1000000008_magnify_174.jpg);}
+section.soldout ul.object_2 li:nth-child(2) a:hover{content: url(../img/상세\ 썸네일\ \(1\).jpg);}
+section.soldout ul.object_2 li a img{width: 35%; transform: translate(95%,20%); filter: opacity(30%); margin-bottom: 160px;}
+section.soldout ul.object_2 li a p{margin-left: 40px; font-size: 17px; color: #bbb; font-weight: bold;}
+
+/* section.frame */
+section.frame{width: 100%; overflow: hidden;}
+section.frame ul{width: 100%;}
+section.frame ul li.frame{width: 100%; position: relative;}
+section.frame ul li.frame a{display: block; width: 100%; height: 100%;}
+section.frame ul li.frame a p.img{width: 100%; }
+section.frame ul li.frame a p.img img{width: 100%; border-top: 1px solid #000; border-bottom: 1px solid #000;}
+section.frame ul li.frame a p.name{font-size: 80px; font-weight: bold; margin-bottom: 30px; letter-spacing: -3px; position: absolute; left: 50px; bottom: 20px;}
+section.frame ul li.frame a p.name span {border-bottom: 5px solid #000;}
+/* li.object */
+section.frame ul li.object{width: 50%; float: left; height: 640px;}
+section.frame ul li.object a{display: block; width: 100%; height: 100%; }
+section.frame ul li.object a:hover{animation-name: object_ani; animation-duration: 1.8s; content: url(../img/1000000020_magnify_056.jpg);}
+@keyframes object_ani{
+    0%{opacity: 0;}
+    30%{opacity: 1;}
+    100%{opacity: 1;}
+}
+section.frame ul li.object:nth-child(2) a{border-right: 1px solid #000;}
+section.frame ul li.object:nth-child(5) a{border-right: 1px solid #000;}
+section.frame ul li.object:nth-child(5) a:hover{ content: url(../img/1000000006_magnify_141.jpg);}
+section.frame ul li.object:nth-child(6) a:hover{ content: url(../img/1000000007_magnify_120.jpg); width: 100%;}
+section.frame ul li.object a img{width: 45%; transform: translate(65%,10%); margin-bottom: 110px;}
+section.frame ul li.object a p{margin-left: 40px; font-weight: bold;}
+
+/* section.black */
+section.black{width: 100%; background: url(../img/bg_about_01.jpg) no-repeat ; height: 1080px; line-height: 1080px;}
+section.black img{width: 100%;}
+
+/* footer */
+footer{width: 100%; overflow: hidden; padding: 50px 0 50px 50px; box-sizing: border-box;}
+footer .inner{ width: 1480px;}
+footer .inner h1{font-size: 23px; margin-bottom: 30px; letter-spacing: -1px;}
+footer .inner ul{width: 100%; overflow: hidden;}
+footer .inner ul li{float: left; font-size: 12px; margin-right: 20px; line-height: 2.5; font-weight: lighter;}
