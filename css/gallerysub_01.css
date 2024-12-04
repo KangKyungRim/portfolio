@@ -1,25 +1,31 @@
-
+body, html{
+  background: #000;
+  color: #fff;
+  height: 100%;
+}
+.wrap{position: relative; overflow: hidden; height: 100%;}
 .logo{ display: inline-block; position: absolute; top: 7%; left: 4%; float: left; position: fixed; }
 .logo a{width: 100%; height: 100%; display: block;}
 .logo a img{width: 120px;}
-.titBox{float: left; width: 60%; display: inline-block; position: absolute; top: 29%; left: 10%; position: fixed;}
-.titBox h2{font-weight: normal; font-size: 70px; margin-bottom:5px;}
-.titBox .txt{font-size: 18px; margin-left: 30px; margin-bottom: 120px;}
-.titBox .keyword{ font-size: 18px; margin-bottom: 30px;}
-.titBox .keyword:nth-child(4){margin-bottom: 100px;}
-.titBox .keyword span{font-weight: bold; margin-right: 50px;}
-.titBox ul{overflow: hidden;}
-.titBox ul li{float: left; font-size: 15px; margin-right: 30px; text-align: center; background: #fff; width: 97px; height: 53px; line-height: 53px;
-color: #000; border-radius: 40px; margin-bottom: 5px;}
-.titBox ul li a{width: 100%; height: 100%; display: block;}
-.titBox .prev{ font-size: 30px; margin-top: 215px; margin-right: 50px; position: absolute; left: -8%; bottom: -38%;}
-.titBox .prev span{margin-right: 5px; font-weight: bold;}
-.titBox .next{ font-size: 30px; margin-top: 215px; position: absolute; right: 6%; bottom: -38%;}
+.titBox{float: left; width: 52%; top: 50%; transform: translateY(-50%); left: 10%;  position: fixed;}
+.titBox h2{font-weight: normal; font-size: 70px; margin-bottom:20px; color: #fff;}
+.titBox .txt{font-size: 18px; margin-bottom: 100px; color: #fff;}
+.titBox .keyword{ font-size: 18px; margin-bottom: 10px; color: #fff;}
+.titBox .keyword span{font-weight: bold; width: 20%; display: inline-block;}
+.titBox ul{overflow: hidden; margin-top: 50px;}
+.titBox ul li{float: left; font-size: 15px; margin-right: 30px; text-align: center; background: #fff; width: 97px; transition: 0.3s;
+color: #000; border-radius: 40px; margin-bottom: 5px; box-sizing: border-box; padding: 10px 0px;}
+.titBox ul li a{width: 100%; height: 100%; display: block; font-family: "FontAwesome";}
+.titBox .prev{ font-size: 30px; margin-top: 215px; margin-right: 50px; position: absolute; left: 0%; bottom: -22%; color: #fff;}
+.titBox .prev span{margin-right: 5px; font-weight: bold; }
+.titBox .next{ font-size: 30px; margin-top: 215px; position: absolute; right: 0%; bottom: -22%; color: #fff;}
 .titBox .next span{margin-left: 5px; font-weight: bold;}
-.right{float: right; }
+.right{float: right; width: 28%; background: #fff; height: 100%;}
+p.img{width: 100%;}
+img{width: 100%;}
 
 /* 호버 */
-.titBox ul li a:hover{color: #fff; background: #000; border-radius: 40px; border: 1px solid #fff;}
+.titBox ul li:hover{color: #fff; background: #000; border-radius: 40px; border: 1px solid #fff; transition: 0.3s;}
 
 /* 애니메이션 */
 .titBox h2.splitting .char{ 

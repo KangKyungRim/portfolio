@@ -50,7 +50,7 @@ $(window).on('scroll resize', function() {
 
 //고정헤더 함수
 function fixHeader() {
-    if (scrollNum > 2970) { 
+    if (scrollNum > 2350) { 
         $('header').addClass('on');
     } else {
         $('header').removeClass('on');

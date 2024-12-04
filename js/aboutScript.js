@@ -37,7 +37,7 @@ $(window).on('scroll resize', function() {
 
 //고정헤더 함수
 function fixHeader() {
-    if (scrollNum > 2950) { 
+    if (scrollNum > 2470) { 
         $('header').addClass('on');
     } else {
         $('header').removeClass('on');
@@ -69,11 +69,10 @@ $(function() {
         infinite: true,
         slidesToShow: 1,
         prevArrow : $('.slick-prev'),
-		nextArrow : $('.slick-next'),
+		    nextArrow : $('.slick-next'),
         fade:true,
-    dotsClass: 'custom_paging',
+        dotsClass: 'custom_paging',
         customPaging: function (slider, i) {
-        console.log(slider);
         return  (i + 1) + ' / ' + slider.slideCount;
     }
     });

@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nanum+Gothic&display=swap');
 
 /* reset */
-
 * {margin: 0;padding: 0; line-height: 1.5;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
 h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
@@ -16,10 +15,10 @@ button:focus {outline: none}
 
 body {font-family: 'Nanum Gothic', sans-serif; font-size: 16px; color: #1d1d1d; overflow-x: hidden;}
 .en{font-family: 'DM Serif Display', serif; color: #1d1d1d;}
-.inner{width: 1632px;}
+.inner{max-width: 1678px;}
 
 header{width: 100%; position: fixed; z-index: 100;}
-.innerHeader{height: 150px;  margin: auto; width: 92%; display: flex; align-items: center; justify-content: space-between;}
+.innerHeader{height: 150px;  margin: auto; width: 88%; display: flex; align-items: center; justify-content: space-between;}
 .innerHeader .logo{float: left;}
 .innerHeader .logo a{width: 100%; height: 100%;}
 .innerHeader .logo a img{width: 120px;}
@@ -58,3 +57,25 @@ header.on2{display: none;}
 .menuOpen .menuWrap.on {width: 100%; right: 0;  transform: skewY(0deg); transition: 0.5s; opacity: 1; }
 .menuOpen .menuWrap ul {display: none} /* 메뉴 열었을때 애니 진행위해서 없애줌 */
 .menuOpen .menuWrap.on ul {display: block;}
+
+
+/* footer */
+footer{width: 100%; background: #000; color: #fff; padding: 50px 0;}
+footer .inner{margin: 0 auto; overflow: hidden;}
+footer .inner .top{ width: 100%; margin-bottom: 300px; overflow: hidden;}
+footer .inner .top .logo{display: inline-block; float: left; margin-right: 30%;}
+footer .inner .top .logo a{width: 120px; height: 100%; display: block;}
+footer .inner .top .logo a img{width: 100%; margin-top: 15px;}
+footer .inner .top .info{float: left;margin: 20px 150px 0 0;}
+footer .inner .top .info .tit{font-size: 18px; font-weight: bold; margin-bottom: 10px;}
+footer .inner .top .info .txt{font-size: 18px;}
+footer .inner .top .menu{float: right; text-align: right; color: #fff;}
+footer .inner .top .menu a{width: 100%; height: 100%; display: block; font-size: 35px; transition: all 0.3s;}
+footer .inner .copyRight{font-size: 13px; display: inline; width: 100%; color: #ccc;}
+
+/* 호버 */
+footer .inner .top .menu a:hover{transform: translateX(-15px); transition: all 0.3s;}
+
+::-webkit-scrollbar {width: 12px;} 
+::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
+::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}

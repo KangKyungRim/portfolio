@@ -1,18 +1,18 @@
-
 /* section.visual */
 section.visual{background: #000; padding: 150px 0;}
 section.visual .inner{ margin: 0 auto; position: relative;}
-section.visual .inner .video{text-align: center; }
-section.visual .inner .video:after{position: absolute; content: ''; width: 502px; height: 892px; background: none; border: 1px solid #fff; top: -2%; left: 33.6%;}
+section.visual .inner .video{text-align: center;  width: 24%; position: relative; left: 50%; transform: translateX(-50%);}
+section.visual .inner .video:after{position: absolute; content: ''; width: 100%; height: 100%; background: none; border: 1px solid #fff; top: -2%; left: -4%;}
+section.visual .inner .video video{width: 100%;}
 section.visual .inner .titBox{color: #fff; position: absolute; content: ''; left: 50%; top: 50%; transform: translate(-50%,-50%);}
 section.visual .inner .titBox a{width: 100%; height: 100%; display: block;}
 section.visual .inner .titBox h2{font-size: 200px; font-weight: normal; font-style: italic; width: 930px;}
 section.visual .inner .titBox .hi{font-size: 30px; position: absolute; top: -20%; left: -5%; line-height: 1.2;}
 section.visual .inner .titBox .space{font-size: 40px; position: absolute; right: -10%;}
-section.visual .txt{color: #fff; font-size: 18px; transform: rotate(270deg) translateY(-50%); position: absolute; top: 50%; left: -5%; content: '';}
-section.visual .img2{position: absolute; right: -5%;  width: 100px; z-index: 1;}
+section.visual .txt{color: #fff; font-size: 18px; transform: rotate(270deg) translateY(-50%); position: absolute; top: 50%; left: 0; content: '';}
+section.visual .img2{position: absolute; right: 0;  width: 100px; z-index: 1;}
 section.visual .img3{position: absolute; }
-section.visual .img4{position: absolute; right: -6%;  width: 120px; opacity: 15%; }
+section.visual .img4{position: absolute; right: 0;  width: 120px; opacity: 15%; }
 section.visual img{width: 100%;}
 
 /* 애니메이션 */
@@ -20,7 +20,7 @@ section.visual img{width: 100%;}
 .img1Box{display: block; transform: rotate(-10deg); opacity: 90%;}
 .img1Box .svgAni path {fill:none; stroke:#fff; stroke-width: 0.5px; stroke-dasharray: 3044; stroke-dashoffset: 0;}
 /* 각각 위치 잡아주기 */
-section.visual .img1Box {width: 370px ; position: absolute; right: -6%; top: 40%;}
+section.visual .img1Box {width: 296px ; position: absolute; right: 0; top: 40%;}
 
 /* SVG 애니메이션 */
 .img1Box.motion .svgAni path {animation-name: dash; animation-duration: 2s;}
@@ -34,7 +34,6 @@ section.visual .img1Box.motion{animation: bfscroll1 linear 3s infinite;}
     50%{bottom: 27%;}
     100%{bottom: 26%;}
 }
-
 
 section.visual .inner .video.motion{animation-name: opacityAni; animation-duration: 1s;} 
 @keyframes opacityAni{
@@ -66,8 +65,6 @@ section.visual .img4.motion{animation: bfscroll4 linear 5s infinite;}
 
 section.visual .txt{animation-name: opacityAni; animation-duration: 1s;}
 
-
-
 section.visual .inner .titBox.motion .hi.splitting .char{ 
     display: inline-block; animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
     animation-delay: calc(20ms * var(--char-index));
@@ -96,37 +93,34 @@ section.visual .inner .titBox.motion h2.splitting .char{
     30%{transform: translateY(30px); opacity: 0;}
 }
 
-
-
-
 /* section.about */
-section.about{background: #000; padding: 200px 0 500px; overflow: hidden; }
-section.about .inner{margin: 0 auto;}
-section.about .inner .left{float: left; color: #fff; width: 50%; padding: 150px; box-sizing: border-box; position: relative;  z-index: 1;}
-section.about .inner .left h2{font-size: 48px; font-weight: normal; margin-bottom: 90px;}
-section.about .inner .left .txt{font-size: 18px; margin-left: 140px; margin-bottom: 221px;}
-section.about .inner .left .getinBtn{display: block; width: 100%; height: 100%; font-size: 22px; margin-left: 140px; font-weight: bold;  display: inline;}
+section.about{background: #000;  overflow: hidden;  }
+section.about .inner{margin: 0 auto; padding: 100px 0; box-sizing: border-box; position: relative;}
+section.about .inner .left{float: left; color: #fff; width: 50%; position: relative;  z-index: 1;}
+section.about .inner .topBox{overflow: hidden; box-sizing: border-box; padding-bottom: 26px;}
+section.about .inner .left h2{font-size: 88px; font-weight: normal; margin-bottom: 70px; color: #fff;}
+section.about .inner .left .txt{font-size: 18px;  margin-bottom: 200px;}
+section.about .inner .left .getinBtn{display: block; width: 100%; height: 100%; font-size: 22px; font-weight: bold;  display: inline;}
 section.about .inner .left .getinBtn i{font-size: 25px; margin-left: 30px; background: #fff; color: #1d1d1d; width: 40px; height: 40px; border-radius: 50%; line-height: 40px; text-align: center; transition: all 0.3s;}
 section.about .inner .left .getinBtn:hover i{transform: translateX(20px); transition: all 0.5s;}
-section.about .inner .left p.img{position: absolute; content: ''; left:-44%; top: 13%; z-index: -1; }
-section.about .inner .left p.img img{width: 100%; opacity: 35%; }
-section.about .inner .right{float:right; width: 50%;}
-section.about .inner .right p.img{text-align: center; padding-top: 50px; position: relative; }
+section.about p.img{position: absolute; content: ''; left:-22%; top: 16%;  }
+section.about p.img img{width: 100%; opacity: 35%; }
+section.about .inner .right{float:right; box-sizing: border-box;}
+section.about .inner .right p.img{text-align: center; padding-top: 50px; position: relative; left: 0%; }
 section.about .inner .right p.img a{width: 100%; height: 100%; display: block;}
-section.about .inner .right p.img a img{transition: all 0.5s;}
-section.about .inner .right p.img a:after{ position: absolute; content: ''; width: 530px; height: 664px; background: none; border: 1px solid #fff; left: 19.5%; top: 9.5%; transition: all 0.3s;}
+section.about .inner .right p.img a img{transition: all 0.5s; opacity: 100%; }
+section.about .inner .right p.img a:after{ position: absolute; content: ''; width: 530px; height: 664px; background: none; border: 1px solid #fff; right: 3%; top: 9.5%; transition: all 0.3s;}
 section.about .inner .right p.img:hover a img{z-index: 1; transform: translate(-20px,-20px); transition: all 0.5s;}
 section.about .inner .right p.img:hover a:after{z-index: -1;}
-section.about .box{width: 1900px; position: relative; margin-top: 60%; }
-section.about .box div{position: absolute; width: 200%; display: block;  content: ''; left: 0; top: 0;}
+section.about .box{width: 1900px; position: relative;  height: 300px; margin-top: 200px;}
+section.about .box div{position: absolute; width: 200%; display: block;  content: ''; left: 0; top: 0; }
 section.about .box div span{font-size: 200px; color: #fff; float: left; width: 50%;}
 
-
 /* svg */
-.bfBox{display: block; transform: rotate(38deg); z-index: -1; opacity: 90%;}
+.bfBox{display: block; transform: rotate(38deg); opacity: 90%;}
 .bfBox .svgAni path {fill:none; stroke:#fff; stroke-width: 0.5px; stroke-dasharray: 8627; stroke-dashoffset: 0;}
 /* 각각 위치 잡아주기 */
-section.about .bfBox {position: absolute; width: 750px; left: -26%; top: 35%;}
+section.about .bfBox {position: absolute; width: 750px; left: -13%; top: 28%;}
 
 /* SVG 애니메이션 */
 .bfBox.motion .svgAni path {animation-name: dash; animation-duration: 4.5s; animation-delay: 0.5s;}
@@ -160,11 +154,8 @@ section.about .inner .left.motion .txt{animation-name: opacityAni; animation-dur
 section.about .inner .left.motion .getinBtn{animation-name: opacityAni; animation-duration: 0.6s;}
 section.about .inner .left.motion p.img{animation-name: opacityAni; animation-duration: 0.6s;}
 
-
-
-
-/* section.gallery */
-section.gallery{padding: 250px 0; width: 100%; box-sizing: border-box; margin-bottom: 600px;}
+/* section.works */
+section.gallery{padding: 100px 0; width: 100%; box-sizing: border-box; margin-bottom: 460px;}
 section.gallery .inner{margin: auto;}
 section.gallery .inner .titBox{display: inline-block;}
 section.gallery .inner .titBox .txt{font-size: 20px; margin-bottom: 10px;}
@@ -292,11 +283,6 @@ section.process .bgBox04 {position: absolute; right: 0; top: 1%;width: 1100px; z
     100%{top: 1%;}
 }
 
-
-
-
-
-
 /* 애니메이션 */
 section.process.motion .inner .mainBox h2.splitting .char{ 
     display: inline-block; animation: slide-up2 1s cubic-bezier(.5, 0, .5, 1) both;
@@ -316,8 +302,6 @@ section.process.motion .inner .mainBox .img3 img{animation: processAni; animatio
 section.process.motion .inner .mainBox .img4 img{animation: processAni; animation-duration: 1.8s;}
 
 section.process.motion .inner .mainBox .txt{animation-name: opacityAni; animation-duration: 0.6s;}
-
-
 
 section.process.motion .bfImg1{animation: scroll1 linear 3.5s infinite;}
 @keyframes scroll1{
@@ -354,8 +338,6 @@ section.process.motion .bfImg5{animation: scroll5 linear 3.5s infinite;}
     100%{top:35%;}
 }
 
-
-
 /* 호버 */
 section.process .inner .mainBox:hover .img1{transform: translateY(-60%); transition: all 0.3s; opacity: 90%;}
 section.process .inner .mainBox:hover .img2{left: 35%; transform: translateY(-54%);  transition: all 0.3s;  opacity: 90%;}
@@ -363,26 +345,4 @@ section.process .inner .mainBox:hover .img3{left: 22%; transition: all 0.3s;  op
 section.process .inner .mainBox:hover .img4 img{transform: scale(1.05); transition: all 0.3s;}
 section.process .inner .mainBox:hover h2{opacity: 40%; transition: all 0.3s;}
 section.process .inner .mainBox:hover .txt{bottom: -3.5%;  transition: all 0.3s;}
-
-
-/* footer */
-footer{width: 100%; background: #000; color: #fff; padding: 50px 0;}
-footer .inner{margin: 0 auto; overflow: hidden;}
-footer .inner .top{ width: 100%; margin-bottom: 600px;}
-footer .inner .top .logo{display: inline-block; float: left; margin-right: 30%;}
-footer .inner .top .logo a{width: 120px; height: 100%; display: block;}
-footer .inner .top .logo a img{width: 100%; margin-top: 15px;}
-footer .inner .top .info{float: left;margin: 20px 150px 0 0;}
-footer .inner .top .info .tit{font-size: 18px; font-weight: bold; margin-bottom: 10px;}
-footer .inner .top .info .txt{font-size: 18px;}
-footer .inner .top .menu{float: right; text-align: right; color: #fff;}
-footer .inner .top .menu a{width: 100%; height: 100%; display: block; font-size: 35px; transition: all 0.3s;}
-footer .inner .copyRight{font-size: 13px; display: inline; width: 100%; color: #ccc;}
-
-/* 호버 */
-footer .inner .top .menu a:hover{transform: translateX(-15px); transition: all 0.3s;}
-
-::-webkit-scrollbar {width: 12px;} 
-::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
-::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}
 
