@@ -29,18 +29,13 @@ $(window).on('scroll resize', function() {
 
 //고정헤더 함수
 function fixHeader() {
-    if (scrollNum > 1100) { 
+    if (scrollNum > 950) { 
         $('header').addClass('on');
     } else {
         $('header').removeClass('on');
     }
-    if (scrollNum > 2450) { 
+    if (scrollNum > 4850) { 
         $('header').removeClass('on');
-    }
-    if (scrollNum > 10880) { 
-        $('header').addClass('on2');
-    }  else {
-        $('header').removeClass('on2');
     }
 };
 

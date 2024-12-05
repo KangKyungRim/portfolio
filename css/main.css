@@ -167,8 +167,8 @@ section.gallery .slideBox{width: 1400px; position: relative;}
 section.gallery .slideBox .slide{position: absolute; left: 45%; width: 100%; margin-top: -50px; overflow: hidden;}
 section.gallery .slideBox .slide li{ margin-right: 120px; position: relative; }
 section.gallery .slideBox .slide li a{width: 100%; height: 100%; display:block; }
-section.gallery .slideBox .slide li a p.img{ margin-bottom: 20px; width: 100%; overflow: hidden; }
-section.gallery .slideBox .slide li a p.img img{display: block; width: 100%; transition: all 0.5s;}
+section.gallery .slideBox .slide li a p.img{ margin-bottom: 20px; width: 100%; overflow: hidden; position: relative; height: 428px; border: 1px solid #f5f5f5;}
+section.gallery .slideBox .slide li a p.img img{display: block; width: 100%; transition: all 0.5s; position: absolute; top: 50%; transform: translateY(-50%);}
 section.gallery .slideBox .slide li a span{font-size: 12px; position: absolute; right: -14%; top: 7%; position: absolute; transform: rotate(270deg); }
 section.gallery .slideBox .slide li:nth-child(12)  a span{right: -17%; top: 8%;}
 section.gallery .slideBox .slide li a .txt{font-size: 16px; color: #333; margin-bottom: 5px;}
@@ -188,7 +188,7 @@ section.gallery .inner .titBox.motion .splitting .char{
 section.gallery .slideBox .arrowSlide{display: inline-block; font-size: 40px; position: absolute; left: 40%; margin-top: 150px; cursor: pointer;}
 
 /* 호버 */
-section.gallery .slideBox .slide li a:hover p.img img{transform: scale(1.1); transition: all 0.5s;}
+section.gallery .slideBox .slide li a:hover p.img img{transform: scale(1.1) translateY(-50%); top: 50%; transition: all 0.5s;}
 
 
 /* section.process */

@@ -1,13 +1,14 @@
 
 /* section.visual */
-section.visual{background: #000; padding: 420px 0;  position: relative;}
-section.visual .txtBox{text-align: center; }
+section.visual{background: #000;   position: relative;}
+section.visual .inner{ margin: auto;  position: relative;}
+section.visual .txtBox{text-align: center; padding: 300px 0; box-sizing: border-box;}
 section.visual .txtBox a{display: inline-block;}
 section.visual .txtBox:before{position: absolute; content: ''; width: 642px; height: 546px; background: none; border: 1px solid #fff; left: 50%; top: 50%;
 transform: translate(-50%,-50%);}
 section.visual .txtBox h2{font-size: 140px; font-style: italic;  color: #fff; font-weight: normal; margin-bottom: 20px;}
 section.visual .txtBox p{font-size: 20px;  color: #fff; line-height: 1.6s;}
-section.visual .txt{color: #fff; position: absolute; content: ''; right: 2.8%; top: 13%; transform: rotate(90deg);font-size: 16px;}
+section.visual .txt{color: #fff; position: absolute; content: ''; right: -2%; top: 16%; transform: rotate(90deg);font-size: 16px;}
 
 /* 애니메이션 */
 
@@ -29,8 +30,6 @@ section.visual .txtBox.motion p.splitting .char{
     30%{transform: translateY(30px); opacity: 0;}
 }
 
-
-
 section.visual .txt.motion{animation-name: opacityAni; animation-duration: 0.7s;}
 @keyframes opacityAni{
     0%{opacity: 0;}
@@ -44,7 +43,7 @@ section.contents .box .left{float: left; width: 30%; margin: 25% 0 0 6%; positio
 section.contents .box .left:after{position: absolute; content: ''; width: 346px; height: 0.5px; background: #707070; left: 12%; top: 50%;}
 section.contents .box .left h2{font-size: 140px; font-weight: normal;}
 section.contents .box .left .txt{font-size: 25px; position: absolute; left: 12%; top: 60%; line-height: 1.4;}
-section.contents .box .img{float: right; width: 1085px; overflow: hidden;}
+section.contents .box .img{float: right; width: 55%; overflow: hidden;}
 section.contents .box .img img{width: 100%; transition: all 0.3s; }
 section.contents .box:nth-child(2) .left{float: right; margin: 25% 6% 0 0; text-align: right;}
 section.contents .box:nth-child(2) .left:after{left: 22%; top: 50%;}
@@ -93,24 +92,3 @@ section.contents .box:nth-child(2).motion .img,section.contents .box:nth-child(4
 }
 
 section.contents .box:nth-child(1).motion .left .txt,section.contents .box:nth-child(3).motion .left .txt,section.contents .box:nth-child(5).motion .left .txt{animation-name: slideAni3; animation-duration: 0.5s;}
-
-/* footer */
-footer{width: 100%; background: #000; color: #fff; padding: 50px 0;}
-footer .inner{margin: 0 auto; overflow: hidden;}
-footer .inner .top{ width: 100%; margin-bottom: 600px;}
-footer .inner .top .logo{display: inline-block; float: left; margin-right: 30%;}
-footer .inner .top .logo a{width: 100%; height: 100%; display: block;}
-footer .inner .top .logo a img{width: 120px; margin-top: 15px;}
-footer .inner .top .info{float: left;margin: 20px 150px 0 0;}
-footer .inner .top .info .tit{font-size: 18px; font-weight: bold; margin-bottom: 10px;}
-footer .inner .top .info .txt{font-size: 18px;}
-footer .inner .top .menu{float: right; text-align: right; color: #fff;}
-footer .inner .top .menu a{width: 100%; height: 100%; display: block; font-size: 35px; transition: all 0.3s;}
-footer .inner .copyRight{font-size: 13px; display: inline; width: 100%; color: #ccc;}
-
-/* 호버 */
-footer .inner .top .menu a:hover{transform: translateX(-15px); transition: all 0.3s;}
-
-::-webkit-scrollbar {width: 12px;} 
-::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
-::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}

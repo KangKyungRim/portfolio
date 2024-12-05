@@ -1,16 +1,16 @@
 
 /* section.visual */
-section.visual{background: #000; padding: 150px 0 70px 0;}
+section.visual{background: #000; padding: 150px 0;}
 section.visual .inner{ margin: auto;  position: relative;}
-section.visual .inner .videoBox { text-align: center;}
-section.visual .inner .videoBox a{display: inline-block;}
-section.visual .inner .videoBox a .video{margin: 0 auto;}
-section.visual .inner .videoBox a .video:after{position: absolute; content: ''; width: 502px; height: 892px; background: none; border: 1px solid #fff;left: 33.6%; top: -2%;}
-section.visual .inner .videoBox a h2{font-size: 180px; font-weight: normal; font-style: italic; color: #fff; position: absolute; left: 50%; top: 50%;
-transform: translate(-50%,-50%); line-height: 1.1;}
-section.visual .inner .txt{color: #fff; position: absolute; right: -8%; top: 6%; transform: rotate(90deg);font-size: 16px;}
-section.visual .inner .num{color: #fff; font-size: 20px; position: absolute; left: -4%; top: 47%; transform: rotate(90deg); font-weight: bold;}
-section.visual .inner .txtBox{color: #fff; font-size: 14px; position: absolute; left: -4%; bottom: 0%;}
+section.visual .inner .video{text-align: center;  width: 24%; position: relative; left: 50%; transform: translateX(-50%);}
+section.visual .inner .video:after{position: absolute; content: ''; width: 100%; height: 100%; background: none; border: 1px solid #fff; top: -2%; left: -4%;}
+section.visual .inner .video video{width: 100%;}
+section.visual .inner .videoBox a{display: inline-block; width: 100%;}
+section.visual .inner .videoBox a h2{font-size: 160px; font-weight: normal; font-style: italic; color: #fff; position: absolute; left: 50%; top: 50%; 
+transform: translate(-50%, -50%); text-align: center;}
+section.visual .inner .txt{color: #fff; position: absolute; right: -5%; top: 7%; transform: rotate(90deg);font-size: 16px;}
+section.visual .inner .num{color: #fff; font-size: 20px; position: absolute; left:0; top: 47%; transform: rotate(90deg); font-weight: bold;}
+section.visual .inner .txtBox{color: #fff; font-size: 14px; position: absolute; left: 0; bottom: 0%;}
 
 /* 애니메이션 */
 section.visual .inner.motion .video{animation-name: opacityAni; animation-duration: 1s;} 
@@ -28,13 +28,12 @@ section.visual .inner.motion .videoBox a h2.splitting .char{
     30%{transform: translateY(30px); opacity: 0;}
 }
 
-
 section.visual .inner.motion .num{animation-name: opacityAni; animation-duration: 1s;}
 section.visual .inner.motion .txt{animation-name: opacityAni; animation-duration: 1s;}
 section.visual .inner.motion .txtBox{animation-name: opacityAni; animation-duration: 1s;}
 
 /* section.logo */
-section.logo{padding: 300px 0;}
+section.logo{padding: 150px 0;}
 section.logo .inner{margin: 0 auto;}
 section.logo .inner h2{font-weight: normal; font-size: 40px; font-style: italic;}
 section.logo .inner .box{margin-top: 100px; width: 100%;  overflow: hidden; }
@@ -56,11 +55,6 @@ section.logo .inner h2.motion.splitting .char{
     0%{transform: translateY(30px); opacity: 0;}
     30%{transform: translateY(30px); opacity: 0;}
 }
-
-
-
-
-
 
 /* section.mindMap */
 section.mindMap{padding: 150px 0;}
@@ -105,11 +99,11 @@ section.information .inner h2.motion.splitting .char{
 
 
 /* section.ideasketch */
-section.ideasketch{padding: 100px 0 200px 0;}
+section.ideasketch{padding: 150px 0 }
 section.ideasketch .inner{margin:0 auto; overflow: hidden;}
 section.ideasketch .inner .titBox{margin-bottom: 100px;}
 section.ideasketch .inner .titBox h2{font-weight: normal; font-size: 40px; font-style: italic;}
-section.ideasketch .inner .titBox p{font-size: 18px; margin-left: 70px;}
+section.ideasketch .inner .titBox p{font-size: 18px; margin-left:  35px;}
 section.ideasketch .inner .imgBox{position: relative; width: 975px; height: 737px;  margin: 0 auto;}
 section.ideasketch .inner .imgBox p.img{ overflow: hidden;}
 section.ideasketch .inner .imgBox p.img img{ transition: all 0.4s;}
@@ -140,15 +134,12 @@ section.ideasketch .inner p.motion.splitting .char{
     30%{transform: translateY(30px); opacity: 0;}
 }
 
-
-
-
 /* section.concept */
-section.concept{padding: 200px 0;}
+section.concept{padding: 150px 0;}
 section.concept .inner{margin: 0 auto; overflow: hidden;}
 section.concept .inner .titBox{margin-bottom: 100px;}
 section.concept .inner .titBox h2{font-weight: normal; font-size: 40px; font-style: italic;}
-section.concept .inner .titBox p{font-size: 18px; margin-left: 70px; font-style: italic;}
+section.concept .inner .titBox p{font-size: 18px; margin-left: 35px; font-style: italic;}
 section.concept .inner ul{width: 100%;}
 section.concept .inner ul li:nth-child(even){float: right; margin-bottom: 600px;}
 section.concept .inner ul li:nth-child(odd){float: left; margin-bottom: 600px;}
@@ -189,7 +180,7 @@ section.concept .inner p.motion.splitting .char{
 }
 
 /* section.style */
-section.style{padding: 100px 0 400px 0;}
+section.style{padding: 150px 0}
 section.style .inner{margin: 0 auto; overflow: hidden;}
 section.style .inner h2.en{font-weight: normal; font-size: 40px; font-style: italic; margin-bottom: 180px;}
 section.style .inner .box{width: 1243px; margin: 0 auto;}
@@ -231,7 +222,7 @@ section.style .inner h2.motion.splitting .char{
 }
 
 /* section.wireframe */
-section.wireframe{background: #000; padding: 200px 0; }
+section.wireframe{background: #000; padding: 150px 0; }
 section.wireframe .inner{margin: 0 auto; overflow: hidden; }
 section.wireframe .inner h2{font-weight: normal; font-size: 40px; font-style: italic; margin-bottom: 180px; color: #fff;}
 section.wireframe .inner .imgBox{ width: 1632px; margin: 0 auto; }
@@ -266,24 +257,3 @@ section.wireframe .inner .imgBox p.img:nth-child(4).motion{animation: slide-up 0
 /* section.imgBox */
 section.imgBox{width: 100%;}
 section.imgBox p.img{width: 100%;}
-
-/* footer */
-footer{width: 100%; background: #000; color: #fff; padding: 50px 0;}
-footer .inner{margin: 0 auto; overflow: hidden;}
-footer .inner .top{ width: 100%; margin-bottom: 600px;}
-footer .inner .top .logo{display: inline-block; float: left; margin-right: 30%;}
-footer .inner .top .logo a{width: 100%; height: 100%; display: block;}
-footer .inner .top .logo a img{width: 120px; margin-top: 15px;}
-footer .inner .top .info{float: left;margin: 20px 150px 0 0;}
-footer .inner .top .info .tit{font-size: 18px; font-weight: bold; margin-bottom: 10px;}
-footer .inner .top .info .txt{font-size: 18px;}
-footer .inner .top .menu{float: right; text-align: right; color: #fff;}
-footer .inner .top .menu a{width: 100%; height: 100%; display: block; font-size: 35px; transition: all 0.3s;}
-footer .inner .copyRight{font-size: 13px; display: inline; width: 100%; color: #ccc;}
-
-/* 호버 */
-footer .inner .top .menu a:hover{transform: translateX(-15px); transition: all 0.3s;}
-
-::-webkit-scrollbar {width: 12px;} 
-::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
-::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}

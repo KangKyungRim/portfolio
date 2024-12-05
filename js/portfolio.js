@@ -30,22 +30,14 @@ $(window).on('scroll resize', function() {
 
 //고정헤더 함수
 function fixHeader() {
-    if (scrollNum > 1070) { 
+    if (scrollNum > 900) { 
         $('header').addClass('on');
     } else {
         $('header').removeClass('on');
     }
-    if (scrollNum > 12070) { 
+    if (scrollNum > 8400) { 
         $('header').removeClass('on');
     }    
-    if (scrollNum > 15000) { 
-        $('header').addClass('on');
-    } 
-    if (scrollNum > 16150) { 
-        $('header').addClass('on2');
-    }  else {
-        $('header').removeClass('on2');
-    }
 };
 
 // 햄버거 메뉴
