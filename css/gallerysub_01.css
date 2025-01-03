@@ -48,3 +48,70 @@ img{width: 100%;}
 ::-webkit-scrollbar {width: 12px;} 
 ::-webkit-scrollbar-track {background: #f7f7f7; border-radius: 0px;}
 ::-webkit-scrollbar-thumb {background: #000; border-radius: 50px;}
+
+
+@media screen and (max-width: 768px) { /* 모바일 */
+  .logo{
+    position: static;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    display: block;
+    float: none;
+  }
+  .logo a img {
+    width: 22%;
+  }
+  .titBox{
+    float: none;
+    width: 100%;
+    position: static;
+    transform: translateY(0);
+    box-sizing: border-box;
+    padding: 0px 30px;
+  }
+  .titBox h2{
+    font-size: 2rem;
+  }
+  .titBox .txt{
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  .titBox .scrollBox{
+    max-height: none;
+  }
+  .titBox .keyword{
+    font-size: 13px;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .titBox ul{
+    margin-top: 10px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  .titBox ul li{
+    width: 60px;
+    margin-right: 20px;
+  }
+  .right{
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+  }
+  .titBox .keyword span{
+    width: 100%;
+  }
+  .titBox .prev{
+    position: static;
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+  }
+  .titBox .next{
+    position: static;
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+    float: right;
+  }
+}

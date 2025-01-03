@@ -22,13 +22,22 @@ $(function() {
 
 $(function() {
     $('.slide').slick({
-        arrows: true,
-        dots: false,
-        autoplay:false,
-        infinite: true,
-        slidesToShow: 3,
-        prevArrow : $('.slick-prev'),
-		nextArrow : $('.slick-next'),
+      arrows: true,
+      dots: false,
+      autoplay:false,
+      infinite: true,
+      slidesToShow:3,
+      prevArrow : $('.slick-prev'),
+		  nextArrow : $('.slick-next'),
+      slide: 'li',
+      responsive:[
+        {
+          breakpoint:768,
+          settings:{
+            slidesToShow: 1,
+          }
+        }
+      ]
     });
 });
 
